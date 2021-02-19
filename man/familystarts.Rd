@@ -12,7 +12,7 @@ A data frame with 39 rows and 11 Variables: \describe{
 }
 }
 \source{
-Family Court Statistics Quarterly, April to June 2020\cr
+Family court statistics quarterly, April to June 2020\cr
 \url{https://www.gov.uk/government/statistics/family-court-statistics-quarterly-april-to-june-2020}
 }
 \usage{

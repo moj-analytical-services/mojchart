@@ -10,6 +10,6 @@
 #'   \item{count}{Number of cases}
 #'   }
 #'
-#' @source Family Court Statistics Quarterly, April to June 2020\cr
+#' @source Family court statistics quarterly, April to June 2020\cr
 #'   \url{https://www.gov.uk/government/statistics/family-court-statistics-quarterly-april-to-june-2020}
 "familystarts"
