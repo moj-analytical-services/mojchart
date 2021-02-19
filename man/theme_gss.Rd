@@ -4,7 +4,13 @@
 \alias{theme_gss}
 \title{GSS theme}
 \usage{
-theme_gss(base_size = 20, base_line_size = 0.5, flipped = FALSE)
+theme_gss(
+  base_size = 20,
+  base_line_size = 0.5,
+  flipped = FALSE,
+  ticks = FALSE,
+  xlabel = FALSE
+)
 }
 \arguments{
 \item{base_size}{The base font size for chart text. The default is set to
@@ -16,6 +22,11 @@ size is 11.) For further details, see
 function (i.e. non-data lines).}
 
 \item{flipped}{A logical value indicating whether the chart has flipped axes.}
+
+\item{ticks}{A logical value indicating whether to add tick marks to the x
+axis. Only adds ticks if \code{flipped = FALSE}.}
+
+\item{xlabel}{A logical value indicating whether to show the x axis label.}
 }
 \value{
 Returns a ggplot2 theme function.
