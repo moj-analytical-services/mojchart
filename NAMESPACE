@@ -3,6 +3,8 @@
 export(bars)
 export(familystarts_reduced)
 export(moj_colours)
+export(moj_palette)
+export(moj_palette_names)
 export(palette_colours)
 export(theme_gss)
 importFrom(dplyr,"%>%")
