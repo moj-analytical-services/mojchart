@@ -21,4 +21,5 @@ Depends:
 Imports: 
     ggplot2 (>= 3.3.0),
     dplyr,
-    rlang
+    rlang,
+    glue

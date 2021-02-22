@@ -2,6 +2,8 @@
 
 export(bars)
 export(familystarts_reduced)
+export(moj_colours)
+export(palette_colours)
 export(theme_gss)
 importFrom(dplyr,"%>%")
 importFrom(ggplot2,element_blank)
