@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+<!-- schemes.md is generated from schemes.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "../figures/schemes-"
+)
+```
+
+# Colour schemes
+
+### muted1
+
+```{r muted1}
+library(mojchart)
+multiswatch("muted1")
+```
+
+### muted2
+
+```{r muted2}
+multiswatch("muted2")
+
+```
+
+### muted3
+
+```{r muted3}
+multiswatch("muted3")
+
+```
+
+### vibrant1
+
+```{r vibrant1}
+multiswatch("vibrant1")
+```
+
+### vibrant2
+
+```{r vibrant2}
+multiswatch("vibrant2")
+```

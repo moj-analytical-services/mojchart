@@ -8,7 +8,7 @@ theme_gss(
   base_size = 20,
   base_line_size = 0.5,
   flipped = FALSE,
-  ticks = FALSE,
+  xticks = FALSE,
   xlabel = FALSE
 )
 }
@@ -23,7 +23,7 @@ function (i.e. non-data lines).}
 
 \item{flipped}{A logical value indicating whether the chart has flipped axes.}
 
-\item{ticks}{A logical value indicating whether to add tick marks to the x
+\item{xticks}{A logical value indicating whether to add tick marks to the x
 axis. Only adds ticks if \code{flipped = FALSE}.}
 
 \item{xlabel}{A logical value indicating whether to show the x axis label.}

@@ -10,7 +10,7 @@
 #' @param base_line_size The base size for lines controlled by the theme
 #'   function (i.e. non-data lines).
 #' @param flipped A logical value indicating whether the chart has flipped axes.
-#' @param ticks A logical value indicating whether to add tick marks to the x
+#' @param xticks A logical value indicating whether to add tick marks to the x
 #'   axis. Only adds ticks if `flipped = FALSE`.
 #' @param xlabel A logical value indicating whether to show the x axis label.
 #' @importFrom ggplot2 theme
@@ -31,7 +31,7 @@
 #'        subtitle = "England and Wales, Q1 2011 - Q2 2020",
 #'        caption = "Source: Family court statistics quarterly, April to June 2020 (table 1)") +
 #'   theme_gss(base_size = 18)
-theme_gss <- function(base_size = 20, base_line_size = 0.5, flipped = FALSE, ticks = FALSE, xlabel = FALSE){
+theme_gss <- function(base_size = 20, base_line_size = 0.5, flipped = FALSE, xticks = FALSE, xlabel = FALSE){
 
   # Base theme object
   base_elements <- theme_grey(base_size = base_size, base_line_size = base_line_size) +
@@ -84,7 +84,7 @@ theme_gss <- function(base_size = 20, base_line_size = 0.5, flipped = FALSE, tic
       flipped_elements
   }
 
-  if (!flipped && ticks)
+  if (!flipped && xticks)
     t <- t +
       xticks_element
 
