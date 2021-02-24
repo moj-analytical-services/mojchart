@@ -160,7 +160,7 @@ ggplot(familystarts_reduced(6), aes(x = year_qtr, y = count, colour = case_type)
   scale_y_continuous(expand = expansion(mult = c(0, 0.05)), label = comma) +
   scale_x_yearqtr(labels = date_format("%Y-Q%q")) +
   expand_limits(y = 0) +
-  theme_gss(base_size = 11, xticks = TRUE) +
+  theme_gss(xticks = TRUE) +
   scale_colour_moj(6, "vibrant1", order = c(1, 3, 2, 6, 4, 5))
 ```
 
@@ -176,7 +176,7 @@ ggplot(bars(5), aes(x = col1, y = col3, fill = col2)) +
        caption = "Source") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
   expand_limits(y = 10) +
-  theme_gss(base_size = 11) +
+  theme_gss() +
   scale_fill_moj(5, "muted2")
 ```
 
@@ -196,7 +196,7 @@ ggplot(bars(3), aes(x = col1, y = col3, fill = col2)) +
   expand_limits(y = 10) +
   guides(fill = guide_legend(reverse = TRUE)) +
   scale_fill_moj(3, "muted1") +
-  theme_gss(base_size = 11, flipped = TRUE, xlabel = FALSE)
+  theme_gss(flipped = TRUE, xlabel = FALSE)
 ```
 
 ![](man/figures/README-example3-1.png)<!-- -->

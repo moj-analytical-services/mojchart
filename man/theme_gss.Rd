@@ -5,7 +5,7 @@
 \title{GSS theme}
 \usage{
 theme_gss(
-  base_size = 20,
+  base_size = 11,
   base_line_size = 0.5,
   flipped = FALSE,
   xticks = FALSE,
@@ -13,9 +13,9 @@ theme_gss(
 )
 }
 \arguments{
-\item{base_size}{The base font size for chart text. The default is set to
-size 20, which works for publication charts on gov.uk. (The ggplot2 default
-size is 11.) For further details, see
+\item{base_size}{The base font size for chart text. For publication charts on
+gov.uk, it is useful to use a larger size, around size 20. For details of
+what this parameter does, see
 \url{https://ggplot2-book.org/polishing.html}.}
 
 \item{base_line_size}{The base size for lines controlled by the theme

@@ -3,9 +3,9 @@
 #' A theme based on Government Statistical Service (GSS) guidance.\cr
 #' \url{https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/}
 #'
-#' @param base_size The base font size for chart text. The default is set to
-#'   size 20, which works for publication charts on gov.uk. (The ggplot2 default
-#'   size is 11.) For further details, see
+#' @param base_size The base font size for chart text. For publication charts on
+#'   gov.uk, it is useful to use a larger size, around size 20. For details of
+#'   what this parameter does, see
 #'   \url{https://ggplot2-book.org/polishing.html}.
 #' @param base_line_size The base size for lines controlled by the theme
 #'   function (i.e. non-data lines).
@@ -31,7 +31,7 @@
 #'        subtitle = "England and Wales, Q1 2011 - Q2 2020",
 #'        caption = "Source: Family court statistics quarterly, April to June 2020 (table 1)") +
 #'   theme_gss(base_size = 18)
-theme_gss <- function(base_size = 20, base_line_size = 0.5, flipped = FALSE, xticks = FALSE, xlabel = FALSE){
+theme_gss <- function(base_size = 11, base_line_size = 0.5, flipped = FALSE, xticks = FALSE, xlabel = FALSE){
 
   # Base theme object
   base_elements <- theme_grey(base_size = base_size, base_line_size = base_line_size) +
