@@ -47,13 +47,13 @@ palettes <- list(
 #' Returns an mojchart colour palette as a named character vector.
 #'
 #' @param n The required number of colours in the palette, from one to six.
-#' @param palette The name of an mojchart palette as a character string. Run
-#'   `moj_palette_names()` for the available options.
+#' @param scheme The name of a colour scheme as a character string. Run
+#'   `scheme_names()` for the available options.
 #' @export
 #' @examples
-#' moj_palette(5, palette = "vibrant1")
-moj_palette <- function(n, palette){
-  palettes[[palette]][[n]]
+#' mojchart_palette(5, scheme = "vibrant1")
+mojchart_palette <- function(n, scheme){
+  palettes[[scheme]][[n]]
 }
 
 #' Names of available palettes
@@ -61,7 +61,7 @@ moj_palette <- function(n, palette){
 #' Returns the names of all mojchart palettes.
 #'
 #' @export
-moj_palette_names <- function(){
+scheme_names <- function(){
   names(palettes)
 }
 

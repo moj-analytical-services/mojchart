@@ -6,7 +6,7 @@
 #' @export
 #' @examples
 #' swatch(c("#039BE5", "#E91E63", "#FFB300"))
-#' swatch(moj_palette(4, "muted1"))
+#' swatch(mojchart_palette(4, scheme = "muted1"))
 #' swatch(moj_colours())
 swatch <- function(colours){
 
