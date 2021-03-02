@@ -15,16 +15,18 @@ create_moj_scale <- function(n, scheme, order = NULL, scale_function, ...){
 
   # Check n is an integer
   if (n != as.integer(n))
-    stop("n must be an integer.", call. = FALSE)
+    stop("n must be an integer.")
 
   # Check n is within range
   if (n < 1 | n > 6){
-    stop("n must be between 1 and 6.", call. = FALSE)
+    stop("n must be between 1 and 6.")
   }
 
   # Check scheme name is valid
-  if (!scheme %in% names(palettes))
-    stop("Unrecognised scheme.", call. = FALSE)
+  if (!scheme %in% names(palettes)){
+    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: {paste(scheme_names(), collapse = " ")}.')
+    rlang::abort(message = message)
+  }
 
   # Set default order
   if (is.null(order))

@@ -35,6 +35,12 @@ swatch <- function(colours){
 #' multiswatch("vibrant1")
 multiswatch <- function(scheme){
 
+  # Check scheme name is valid
+  if (!scheme %in% names(palettes)){
+    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: {paste(scheme_names(), collapse = " ")}.')
+    rlang::abort(message = message)
+  }
+
   # Add an NA element to each palette vector for spacing in the plot
   palette_blank_rows <- lapply(palettes[[scheme]], c, NA)
 
