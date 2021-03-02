@@ -28,15 +28,15 @@ swatch <- function(colours){
 #'
 #' Preview all the palettes contained within an mojchart colour scheme.
 #'
-#' @param palette_name The name of an mojchart palette. Run
-#'   `moj_palette_names()` for the available options.
+#' @param scheme The name of an mojchart colour scheme. Run `scheme_names()` for
+#'   the available options.
 #' @export
 #' @examples
 #' multiswatch("vibrant1")
-multiswatch <- function(palette_name){
+multiswatch <- function(scheme){
 
   # Add an NA element to each palette vector for spacing in the plot
-  palette_blank_rows <- lapply(palettes[[palette_name]], c, NA)
+  palette_blank_rows <- lapply(palettes[[scheme]], c, NA)
 
   allcolour_vector <- unlist(palette_blank_rows)
   na_index <- (is.na(allcolour_vector))

@@ -4,11 +4,11 @@
 \alias{multiswatch}
 \title{Swatch plot for a full colour scheme}
 \usage{
-multiswatch(palette_name)
+multiswatch(scheme)
 }
 \arguments{
-\item{palette_name}{The name of an mojchart palette. Run
-\code{moj_palette_names()} for the available options.}
+\item{scheme}{The name of an mojchart colour scheme. Run \code{scheme_names()} for
+the available options.}
 }
 \description{
 Preview all the palettes contained within an mojchart colour scheme.
