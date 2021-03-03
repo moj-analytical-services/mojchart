@@ -51,13 +51,13 @@ moj_colours <- function(...){
     mojdarkgrey = "#2a363b"
   )
 
-  subset_colours(colours, ...)
+  subset_colours(colours, fun = "moj_colours", ...)
 }
 
 #' Palette colours
 #'
 #' Provides names and hex codes for colours used in the mojchart palettes. If
-#' colour names are passed as arguments, the function returns those colours. If
+#' colour names are passed as arguments, returns those colours. If
 #' no arguments are provided, returns every colour.
 #'
 #' @param ... Colour names as character strings.
@@ -96,7 +96,7 @@ palette_colours <- function(...){
     pink1 = "#f3bee0"
   )
 
-  subset_colours(colours, ...)
+  subset_colours(colours, fun = "palette_colours", ...)
 }
 
 #' Subset a vector of colours
@@ -105,13 +105,15 @@ palette_colours <- function(...){
 #' names are supplied, returns the full vector.
 #'
 #' @param colour_vector A named character vector to subset.
+#' @param fun The name of the function that calls subset_colours(), as a
+#'   character string. Used in the error message for an invalid colour name.
 #' @param ... Colour names as character strings.
 #' @return Returns a named character vector.
 #' @noRd
 #' @examples
 #' x <- c(colour1 = "#1d609d", colour2 = "#00b1eb")
 #' subset_colours(x, "colour2")
-subset_colours <- function(colour_vector, ...){
+subset_colours <- function(colour_vector, fun = NULL, ...){
 
   names_provided <- c(...)
 
@@ -120,7 +122,7 @@ subset_colours <- function(colour_vector, ...){
 
   for (value in names_provided){
     if (!value %in% names_allowed){
-      message <- glue::glue('"{value}" is not a valid colour name. To see all available colours, run {substitute(colour_vector)}().')
+      message <- glue::glue('"{value}" is not a valid colour name. To see all available colours, run {fun}().')
       rlang::abort(message = message)
     }
   }

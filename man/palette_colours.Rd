@@ -14,7 +14,7 @@ Returns a named character vector.
 }
 \description{
 Provides names and hex codes for colours used in the mojchart palettes. If
-colour names are passed as arguments, the function returns those colours. If
+colour names are passed as arguments, returns those colours. If
 no arguments are provided, returns every colour.
 }
 \examples{
