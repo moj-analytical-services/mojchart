@@ -49,44 +49,44 @@ To obtain the hex codes for individual colours:\
 To preview palettes:
 
 * `swatch()` displays a preview of a vector of colour hex codes;
-* `multiswatch()` displays all the palettes comprising a specified colour scheme.
+* `multiswatch()` displays all the palettes within a colour scheme.
 
-See the function help files for details and examples for all the package functions.
+The function help pages (accessed using `?` or `help()` in RStudio) contain full details and examples.
 
 
 ## GSS theme
 
-The main principle behind `theme_gss()` is to simplify the chart and remove unecessary formatting. The theme allows for a main title plus a subtitle for additional statistical details. The data source can be shown in the caption below the chart. Illustration charts are shown in the examples section below.
+The main principle behind `theme_gss()` is to simplify the chart and remove unecessary formatting. The theme allows for a main title plus a subtitle for statistical details. The data source can be shown in the caption below the chart.
 
-Axis labels should be horizontal according to both the GSS guidance and [ONS web accessibility guidance](https://style.ons.gov.uk/writing-for-the-web/web-accessibility/accessible-charts/). To that end, `theme_gss()` suppresses the ggplot2 y axis label; a label can instead be included within the ggplot2 subtitle if needed. This is demonstrated by the second of the example charts.
+Axis labels should be horizontal according to both the [GSS guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-2:~:text=Things%20to%20include%20with%20your%20graph) and [ONS web accessibility guidance](https://style.ons.gov.uk/writing-for-the-web/web-accessibility/accessible-charts/). To that end, `theme_gss()` suppresses the ggplot2 y axis label; a label can instead be included within the ggplot2 subtitle if required. This is demonstrated by the second of the example charts [below](#examples).
 
-`theme_gss()` includes arguments to show or hide the x axis label and x axis tick marks. Setting the argument `flipped = TRUE` reverses the x and y axes for use with `coord_flip()`.
+`theme_gss()` includes parameters to show or hide the x axis label and x axis tick marks. Setting the parameter `flipped = TRUE` reverses the x and y axes for use with `coord_flip()`.
 
 
 ## Colour palettes
 
-The package provides colour palettes for discrete data, grouped into several colour schemes. There are two types of colour scheme: vibrant and muted. The vibrant schemes use MoJ corporate colours and are recommended for lines or points. The muted schemes are intended for shading areas, such as for bar charts, in line with the [GSS guidance on the use of colour](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9). Each colour scheme consists of six palettes, containing from one to six colours. Consider the accessibility implications if you need more colours than that (see below).
+The package provides colour palettes for discrete data, grouped into several colour schemes. There are two types of colour scheme: vibrant and muted. The vibrant schemes use MoJ corporate colours and are recommended for lines or points. The muted schemes are based on MoJ colours but with reduced saturation. They are intended for shading areas, such as for bar charts, in line with the [GSS guidance on the use of colour](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9). Each colour scheme consists of six palettes, containing from one to six colours. Six colours is probably around the maximum to keep charts clear and accessible (see [below](#accessibility)).
 
-For sequential palettes or continuous data, you could look at the [inbuilt ggplot2 options](https://ggplot2-book.org/scale-colour.html), or try the [colorspace](https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html) package.
+For sequential palettes or continuous data, you could look at the inbuilt [ggplot2 options](https://ggplot2-book.org/scale-colour.html), or try the [colorspace](https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html) package.
 
-To return a palette as a vector, use the `mojchart_palette()` function, with the number of colours needed and the name of a colour scheme. The `swatch()` function can be used to show a preview.
-
-```{r swatch, out.width = "50%", fig.align = 'center'}
-library(mojchart)
-pal <- mojchart_palette(n = 5, scheme = "muted3")
-swatch(pal)
-```
-
-\ \
 `scheme_names()` shows the available colour schemes.
 
 ```{r}
+library(mojchart)
 scheme_names()
 ```
 
-The `multiswatch()` function shows all the palettes within a scheme, as shown [here](man/additional-documentation/schemes.md) for each scheme.
+You can use `scale_colour_moj()` or `scale_fill_moj()` to apply a palette to a ggplot2 chart, passing the number of colours and the name of a colour scheme as arguments. There is an optional `order` parameter to change the colour order.
 
-`scale_colour_moj()` and `scale_fill_moj()` can be used to apply a palette to a ggplot2 chart, as shown in the examples section below.
+To obtain a palette as a vector, use `mojchart_palette()`, again specifying the number of colours and the colour scheme. The `swatch()` function displays a preview.
+
+```{r swatch, out.width = "50%", fig.align = 'center'}
+pal <- mojchart_palette(n = 5, scheme = "muted3")
+pal
+swatch(pal)
+```
+
+The `multiswatch()` function shows all the palettes within a scheme, as shown [here](man/additional-documentation/schemes.md) for each scheme.
 
 
 ## Accessing individual colours
@@ -110,9 +110,9 @@ Similar points are made in web accessibility guidance from the [Office for Natio
 
 For line charts, the GSS recommends labelling lines directly where possible rather than using a legend. The [directlabels](http://directlabels.r-forge.r-project.org/) package provides one way to implement this in R.
 
-Below are two resources to help assess colour-blindness accessibility.\
+Below are two resources to help assess colour blindness accessibility.\
 
-* To simulate how an image file will appear to individuals with forms of colour-blindness:
+* To simulate how an image file will appear to individuals with forms of colour blindness:
 https://www.color-blindness.com/coblis-color-blindness-simulator/.
 * To simulate the appearance of a palette of colour hex codes:
 https://davidmathlogic.com/colorblind/.
@@ -170,6 +170,6 @@ ggplot(bars(3), aes(x = col1, y = col3, fill = col2)) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
   expand_limits(y = 10) +
   guides(fill = guide_legend(reverse = TRUE)) +
-  theme_gss(flipped = TRUE, xlabel = FALSE) +
+  theme_gss(flipped = TRUE, xlabel = TRUE) +
   scale_fill_moj(3, scheme = "muted1")
 ```
