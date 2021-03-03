@@ -1,14 +1,13 @@
 Package: mojchart
-Title: Colour palettes and formatting for ggplot2 charts
+Title: MoJ Colours and a GSS Style Theme for ggplot2
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Graham",
            family = "Ison",
            role = c("aut", "cre"),
            email = "graham.ison@justice.gov.uk")
-Description: Provides functions for formatting charts in ggplot2.
-    Colour palettes are based on MoJ corporate colours. All MoJ
-    colours are also made available individually.
+Description: Provides functions for formatting ggplot2 charts in line with
+    Government Statistical Service (GSS) guidance and MoJ corporate branding.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
