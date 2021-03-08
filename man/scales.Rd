@@ -4,7 +4,7 @@
 \alias{scales}
 \alias{scale_colour_moj}
 \alias{scale_fill_moj}
-\title{Scale functions for ggplot2}
+\title{ggplot2 scale functions}
 \usage{
 scale_colour_moj(n, scheme = "vibrant1", order = NULL, ...)
 
@@ -21,13 +21,13 @@ fill scale and "vibrant" schemes for the colour scale.}
 \code{order} must have length \code{n}. Numbers can be repeated to apply the same
 colour to multiple categories in the data.}
 
-\item{...}{Other arguments passed to the ggplot2 scale function.}
+\item{...}{Other arguments passed to scale_discrete_manual().}
 }
 \value{
 Returns a ggplot2 scale function.
 }
 \description{
-Scale functions to add mojchart palettes to charts.
+Scale functions for mojchart palettes.
 }
 \examples{
 library(ggplot2)

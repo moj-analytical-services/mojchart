@@ -1,17 +1,17 @@
 #' Create a ggplot2 scale function for an mojchart palette
 #'
-#' Generates a discrete scale function using either `scale_colour_manual()` or
-#' `scale_fill_manual()`.
+#' Generates a discrete scale function for an mojchart palette and a given
+#' aesthetic, using `ggplot2::scale_discrete_manual()`.
 #'
 #' @inheritParams scales
-#' @param scale_function A ggplot2 discrete scale function, either
-#'   `scale_colour_manual()` or `scale_fill_manual()`.
+#' @param aesthetics The aesthetic(s) that the scale work with. Passed to the
+#'   `aesthetics` parameter of `ggplot2::scale_discrete_manual()`.
 #' @return Returns a ggplot2 scale function.
 #' @noRd
 #' @examples
 #' library(ggplot2)
-#' create_moj_scale(5, scheme = "vibrant1", scale_function = scale_colour_manual)
-create_moj_scale <- function(n, scheme, order = NULL, scale_function, ...){
+#' create_moj_scale(5, scheme = "vibrant1", aesthetics = "colour")
+create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
 
   # Check n is an integer
   if (n != as.integer(n))
@@ -34,12 +34,12 @@ create_moj_scale <- function(n, scheme, order = NULL, scale_function, ...){
 
   palette_neworder <- reorder_palette(palettes[[scheme]][[n]], order)
 
-  scale_function(values = unname(palette_neworder), ...)
+  ggplot2::scale_discrete_manual(aesthetics, values = unname(palette_neworder), ...)
 }
 
-#' Scale functions for ggplot2
+#' ggplot2 scale functions
 #'
-#' Scale functions to add mojchart palettes to charts.
+#' Scale functions for mojchart palettes.
 #'
 #' @param n The number of colours required, from one to six.
 #' @param scheme The name of an mojchart scheme. Run `scheme_names()` for
@@ -48,7 +48,7 @@ create_moj_scale <- function(n, scheme, order = NULL, scale_function, ...){
 #' @param order A numeric vector giving the order in which to apply the colours.
 #'   `order` must have length `n`. Numbers can be repeated to apply the same
 #'   colour to multiple categories in the data.
-#' @param ... Other arguments passed to the ggplot2 scale function.
+#' @param ... Other arguments passed to scale_discrete_manual().
 #' @return Returns a ggplot2 scale function.
 #' @name scales
 #' @examples
@@ -64,15 +64,13 @@ create_moj_scale <- function(n, scheme, order = NULL, scale_function, ...){
 NULL
 
 #' @rdname scales
-#' @importFrom ggplot2 scale_colour_manual
 #' @export
 scale_colour_moj <- function(n, scheme = "vibrant1", order = NULL, ...){
-  create_moj_scale(n, scheme, order, scale_function = scale_colour_manual, ...)
+  create_moj_scale(n, scheme, order, aesthetics = "colour", ...)
 }
 
 #' @rdname scales
-#' @importFrom ggplot2 scale_fill_manual
 #' @export
 scale_fill_moj <- function(n, scheme = "muted1", order = NULL, ...){
-  create_moj_scale(n, scheme, order, scale_function = scale_fill_manual, ...)
+  create_moj_scale(n, scheme, order, aesthetics = "fill", ...)
 }
