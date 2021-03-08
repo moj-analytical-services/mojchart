@@ -7,7 +7,7 @@
 
 ``` r
 library(mojchart)
-multiswatch("muted1")
+display_scheme("muted1")
 ```
 
 ![](../figures/schemes-muted1-1.png)<!-- -->
@@ -15,7 +15,7 @@ multiswatch("muted1")
 ### muted2
 
 ``` r
-multiswatch("muted2")
+display_scheme("muted2")
 ```
 
 ![](../figures/schemes-muted2-1.png)<!-- -->
@@ -23,7 +23,7 @@ multiswatch("muted2")
 ### muted3
 
 ``` r
-multiswatch("muted3")
+display_scheme("muted3")
 ```
 
 ![](../figures/schemes-muted3-1.png)<!-- -->
@@ -31,7 +31,7 @@ multiswatch("muted3")
 ### vibrant1
 
 ``` r
-multiswatch("vibrant1")
+display_scheme("vibrant1")
 ```
 
 ![](../figures/schemes-vibrant1-1.png)<!-- -->
@@ -39,7 +39,7 @@ multiswatch("vibrant1")
 ### vibrant2
 
 ``` r
-multiswatch("vibrant2")
+display_scheme("vibrant2")
 ```
 
 ![](../figures/schemes-vibrant2-1.png)<!-- -->

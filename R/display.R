@@ -1,16 +1,16 @@
-#' Swatch plot
+#' Display a palette
 #'
-#' Preview a vector of colours.
+#' Displays a vector of colours.
 #'
-#' @param colours A character vector of colours.
+#' @param x A character vector of colours.
 #' @export
 #' @examples
-#' swatch(c("#039BE5", "#E91E63", "#FFB300"))
-#' swatch(mojchart_palette(4, scheme = "muted1"))
-#' swatch(moj_colours())
-swatch <- function(colours){
+#' display_palette(c("#039BE5", "#E91E63", "#FFB300"))
+#' display_palette(mojchart_palette(4, scheme = "muted1"))
+#' display_palette(moj_colours())
+display_palette <- function(x){
 
-  df <- dplyr::tibble(x = factor(1:length(colours)), y = 1)
+  df <- dplyr::tibble(x = factor(1:length(x)), y = 1)
 
   ggplot2::ggplot(df, ggplot2::aes(x = .data$x, y = .data$y, fill = .data$x)) +
     ggplot2::geom_col() +
@@ -19,12 +19,12 @@ swatch <- function(colours){
     ggplot2::theme(legend.position = "none",
           axis.text.y = ggplot2::element_text(),
           plot.margin = ggplot2::unit(c(10, 10, 10, 10), "pt")) +
-    ggplot2::scale_fill_manual(values = unname(colours)) +
-    ggplot2::scale_x_discrete(labels = unname(colours)) +
+    ggplot2::scale_fill_manual(values = unname(x)) +
+    ggplot2::scale_x_discrete(labels = unname(x)) +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = 0.02))
 }
 
-#' Swatch plot for a full colour scheme
+#' Display a colour scheme
 #'
 #' Preview all the palettes contained within an mojchart colour scheme.
 #'
@@ -32,8 +32,8 @@ swatch <- function(colours){
 #'   the available options.
 #' @export
 #' @examples
-#' multiswatch("vibrant1")
-multiswatch <- function(scheme){
+#' display_scheme("vibrant1")
+display_scheme <- function(scheme){
 
   # Check scheme name is valid
   if (!scheme %in% names(palettes)){
@@ -64,4 +64,34 @@ multiswatch <- function(scheme){
     ggplot2::scale_fill_manual(values = unname(allcolour_vector)) +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = 0.02)) +
     ggplot2::scale_x_discrete(labels = unname(labels))
+}
+
+#' Display a palette
+#'
+#' RENAMED: please use `display_palette()` instead.
+#'
+#' @param ... Arguments passed to `display_palette()`.
+#' @export
+#' @examples
+#' swatch(moj_colours())
+swatch <- function(...){
+
+  warning("swatch() has been renamed as display_palette() and will be removed in the future.", call. = FALSE)
+
+  display_palette(...)
+}
+
+#' Display a colour scheme
+#'
+#' RENAMED: please use `display_scheme()` instead.
+#'
+#' @param ... Arguments passed to `display_scheme()`.
+#' @export
+#' @examples
+#' multiswatch("vibrant1")
+multiswatch <- function(...){
+
+  warning("multiswatch() has been renamed as display_palette() and will be removed in the future.", call. = FALSE)
+
+  display_scheme(...)
 }

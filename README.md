@@ -44,10 +44,10 @@ To obtain the hex codes for individual colours:
   - `palette_colours()` provides the colours used in the mojchart
     palettes.  
 
-To preview palettes:
+To display palettes:
 
-  - `swatch()` displays a preview of a vector of colour hex codes;
-  - `multiswatch()` displays all the palettes within a colour scheme.
+  - `display_palette()` displays a vector of colour hex codes;
+  - `display_scheme()` displays all the palettes within a colour scheme.
 
 The function help pages (accessed using `?` or `help()` in RStudio)
 contain full details and examples.
@@ -105,21 +105,22 @@ of a colour scheme as arguments. There is an optional `order` parameter
 to change the colour order.
 
 To obtain a palette as a vector, use `mojchart_palette()`, again
-specifying the number of colours and the colour scheme. The `swatch()`
-function displays a preview.
+specifying the number of colours and the colour scheme. The
+`display_palette()` function displays a preview.
 
 ``` r
 pal <- mojchart_palette(n = 5, scheme = "muted3")
 pal
 #> mojdarkblue    midblue2       teal2       pink1     yellow1 
 #>   "#003057"   "#2972a3"   "#59a6a4"   "#f3bee0"   "#feebb3"
-swatch(pal)
+display_palette(pal)
 ```
 
-<img src="man/figures/README-swatch-1.png" width="50%" style="display: block; margin: auto;" />
+<img src="man/figures/README-display_palette-1.png" width="50%" style="display: block; margin: auto;" />
 
-The `multiswatch()` function shows all the palettes within a scheme, as
-shown [here](man/additional-documentation/schemes.md) for each scheme.
+The `display_scheme()` function shows all the palettes within a scheme,
+as shown [here](man/additional-documentation/schemes.md) for each
+scheme.
 
 ## Accessing individual colours
 

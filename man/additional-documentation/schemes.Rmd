@@ -18,31 +18,31 @@ knitr::opts_chunk$set(
 
 ```{r muted1}
 library(mojchart)
-multiswatch("muted1")
+display_scheme("muted1")
 ```
 
 ### muted2
 
 ```{r muted2}
-multiswatch("muted2")
+display_scheme("muted2")
 
 ```
 
 ### muted3
 
 ```{r muted3}
-multiswatch("muted3")
+display_scheme("muted3")
 
 ```
 
 ### vibrant1
 
 ```{r vibrant1}
-multiswatch("vibrant1")
+display_scheme("vibrant1")
 ```
 
 ### vibrant2
 
 ```{r vibrant2}
-multiswatch("vibrant2")
+display_scheme("vibrant2")
 ```
