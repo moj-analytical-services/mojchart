@@ -85,14 +85,12 @@ palette_colours <- function(...){
 
     # Colours for muted palettes (good for bar charts)
     midblue1 = "#3975ac",
-    midblue2 = "#2972a3",
-    lightblue1 = "#93d6ec",
-    lightblue2 = "#81cbe4",
+    lightblue1 = "#81cbe4",
+    paleblue1 = "#c9e4ed",
     teal1 = "#70c2c0",
     teal2 = "#59a6a4",
     yellow1 = "#feebb3",
     yellow2 = "#fde59b",
-    grey1 = "#c9e4ed",
     pink1 = "#f3bee0"
   )
 

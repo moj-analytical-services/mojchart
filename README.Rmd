@@ -86,7 +86,7 @@ pal
 display_palette(pal)
 ```
 
-The `display_scheme()` function shows all the palettes within a scheme, as shown [here](man/additional-documentation/schemes.md) for each scheme.
+The `display_scheme()` function shows all the palettes within a colour scheme, as shown [here](man/additional-documentation/schemes.md) for each scheme.
 
 
 ## Accessing individual colours

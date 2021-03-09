@@ -111,16 +111,16 @@ specifying the number of colours and the colour scheme. The
 ``` r
 pal <- mojchart_palette(n = 5, scheme = "muted3")
 pal
-#> mojdarkblue    midblue2       teal2       pink1     yellow1 
-#>   "#003057"   "#2972a3"   "#59a6a4"   "#f3bee0"   "#feebb3"
+#> mojdarkblue    midblue1       teal2       pink1     yellow1 
+#>   "#003057"   "#3975ac"   "#59a6a4"   "#f3bee0"   "#feebb3"
 display_palette(pal)
 ```
 
 <img src="man/figures/README-display_palette-1.png" width="50%" style="display: block; margin: auto;" />
 
-The `display_scheme()` function shows all the palettes within a scheme,
-as shown [here](man/additional-documentation/schemes.md) for each
-scheme.
+The `display_scheme()` function shows all the palettes within a colour
+scheme, as shown [here](man/additional-documentation/schemes.md) for
+each scheme.
 
 ## Accessing individual colours
 

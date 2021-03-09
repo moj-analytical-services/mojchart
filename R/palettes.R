@@ -3,26 +3,26 @@ palettes <- list(
   muted1 = list(
     palette_colours("mojblue"),
     palette_colours("mojblue", "lightblue1"),
-    palette_colours("mojblue", "lightblue2", "grey1"),
-    palette_colours("mojdarkblue", "midblue1", "lightblue2", "grey1"),
-    palette_colours("mojdarkblue", "midblue2", "teal2", "lightblue2", "grey1"),
-    palette_colours("mojdarkblue", "midblue2", "teal2", "lightblue2", "yellow1", "grey1")
+    palette_colours("mojblue", "lightblue1", "paleblue1"),
+    palette_colours("mojdarkblue", "midblue1", "lightblue1", "paleblue1"),
+    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "paleblue1"),
+    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1", "paleblue1")
   ),
   muted2 = list(
     palette_colours("mojblue"),
     palette_colours("mojblue", "lightblue1"),
     palette_colours("mojblue", "teal1", "yellow1"),
     palette_colours("mojdarkblue", "midblue1", "teal1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue2", "teal2", "lightblue2", "yellow1"),
-    palette_colours("mojdarkblue", "midblue2", "teal2", "lightblue2", "yellow1", "grey1")
+    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1"),
+    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1", "paleblue1")
   ),
   muted3 = list(
     palette_colours("mojblue"),
     palette_colours("mojblue", "yellow2"),
     palette_colours("mojblue", "teal2", "yellow2"),
     palette_colours("mojblue", "teal2", "pink1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue2", "teal2", "pink1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue2", "teal2", "lightblue2", "pink1", "yellow1")
+    palette_colours("mojdarkblue", "midblue1", "teal2", "pink1", "yellow1"),
+    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "pink1", "yellow1")
   ),
   vibrant1 = list(
     palette_colours("mojblue"),

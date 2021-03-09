@@ -42,7 +42,7 @@ create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
 #' Scale functions for mojchart palettes.
 #'
 #' @param n The number of colours required, from one to six.
-#' @param scheme The name of an mojchart scheme. Run `scheme_names()` for
+#' @param scheme The name of an mojchart colour scheme. Run `scheme_names()` for
 #'   the available options. "Muted" schemes are generally recommended for the
 #'   fill scale and "vibrant" schemes for the colour scale.
 #' @param order A numeric vector giving the order in which to apply the colours.

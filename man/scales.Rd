@@ -13,7 +13,7 @@ scale_fill_moj(n, scheme = "muted1", order = NULL, ...)
 \arguments{
 \item{n}{The number of colours required, from one to six.}
 
-\item{scheme}{The name of an mojchart scheme. Run \code{scheme_names()} for
+\item{scheme}{The name of an mojchart colour scheme. Run \code{scheme_names()} for
 the available options. "Muted" schemes are generally recommended for the
 fill scale and "vibrant" schemes for the colour scale.}
 
