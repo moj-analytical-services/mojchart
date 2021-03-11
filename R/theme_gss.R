@@ -1,4 +1,4 @@
-#' GSS theme
+#' GSS style theme
 #'
 #' A theme based on Government Statistical Service (GSS) guidance.\cr
 #' \url{https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/}
@@ -46,7 +46,7 @@ theme_gss <- function(base_size = 11, base_line_size = 0.5, flipped = FALSE, xti
           legend.key.size = unit(2, "lines"),
           plot.title = element_text(face = "bold"),
           plot.subtitle = element_text(margin = margin(b = 10)),
-          plot.caption = element_text(hjust = 0, margin = margin(t = 20)),
+          plot.caption = element_text(hjust = 0, margin = margin(t = 10)),
           plot.title.position = "plot",
           plot.caption.position = "plot"
     )

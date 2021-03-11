@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_gss.R
 \name{theme_gss}
 \alias{theme_gss}
-\title{GSS theme}
+\title{GSS style theme}
 \usage{
 theme_gss(
   base_size = 11,
