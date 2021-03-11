@@ -2,18 +2,18 @@
 % Please edit documentation in R/palettes.R
 \name{mojchart_palette}
 \alias{mojchart_palette}
-\title{mojchart colour palette}
+\title{Single colour palette}
 \usage{
 mojchart_palette(n, scheme)
 }
 \arguments{
-\item{n}{The required number of colours in the palette, from one to six.}
+\item{n}{The number of colours required, from one to six.}
 
 \item{scheme}{The name of a colour scheme as a character string. Run
 \code{scheme_names()} for the available options.}
 }
 \description{
-Returns an mojchart colour palette as a named character vector.
+Returns a single colour palette as a named character vector.
 }
 \examples{
 mojchart_palette(5, scheme = "vibrant1")

@@ -2,10 +2,13 @@
 % Please edit documentation in R/palettes.R
 \name{scheme_names}
 \alias{scheme_names}
-\title{Names of available palettes}
+\title{Colour scheme names}
 \usage{
 scheme_names()
 }
 \description{
-Returns the names of all mojchart palettes.
+Returns the names of the mojchart colour schemes.
+}
+\examples{
+scheme_names()
 }

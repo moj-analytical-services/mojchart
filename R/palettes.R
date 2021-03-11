@@ -1,52 +1,72 @@
-# Palettes (for up to 6 colours)
-palettes <- list(
-  muted1 = list(
-    palette_colours("mojblue"),
-    palette_colours("mojblue", "lightblue1"),
-    palette_colours("mojblue", "lightblue1", "paleblue1"),
-    palette_colours("mojdarkblue", "midblue1", "lightblue1", "paleblue1"),
-    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "paleblue1"),
-    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1", "paleblue1")
-  ),
-  muted2 = list(
-    palette_colours("mojblue"),
-    palette_colours("mojblue", "lightblue1"),
-    palette_colours("mojblue", "teal1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue1", "teal1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1", "paleblue1")
-  ),
-  muted3 = list(
-    palette_colours("mojblue"),
-    palette_colours("mojblue", "yellow2"),
-    palette_colours("mojblue", "teal2", "yellow2"),
-    palette_colours("mojblue", "teal2", "pink1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue1", "teal2", "pink1", "yellow1"),
-    palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "pink1", "yellow1")
-  ),
-  vibrant1 = list(
-    palette_colours("mojblue"),
-    palette_colours("mojblue", "mojbrightblue"),
-    palette_colours("mojblue", "mojbrightblue", "mojgrey"),
-    palette_colours("mojblue", "mojbrightblue", "mojgrey", "mojbrightorange"),
-    palette_colours("mojblue", "mojbrightblue", "mojgrey", "mojbrightorange", "mojgreen"),
-    palette_colours("mojblue", "mojbrightblue", "mojgrey", "mojbrightorange", "mojgreen", "mojpink")
-  ),
-  vibrant2 = list(
-    palette_colours("mojblue"),
-    palette_colours("mojblue", "mojbrightblue"),
-    palette_colours("mojblue", "mojbrightblue", "mojbrightorange"),
-    palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen"),
-    palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen", "mojpink"),
-    palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen", "mojpink", "mojgrey")
+#' Colour palettes
+#'
+#' Returns a named list containing the package colour schemes. Each colour
+#' scheme contains six palettes, with one to six colours.
+#'
+#' @noRd
+#' @examples
+#' palettes()
+palettes <- function(){
+  list(
+    muted1 = list(
+      palette_colours("mojblue"),
+      palette_colours("mojblue", "lightblue1"),
+      palette_colours("mojblue", "lightblue1", "paleblue1"),
+      palette_colours("mojdarkblue", "midblue1", "lightblue1", "paleblue1"),
+      palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "paleblue1"),
+      palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1", "paleblue1")
+    ),
+    muted2 = list(
+      palette_colours("mojblue"),
+      palette_colours("mojblue", "lightblue1"),
+      palette_colours("mojblue", "teal1", "yellow1"),
+      palette_colours("mojdarkblue", "midblue1", "teal1", "yellow1"),
+      palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1"),
+      palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "yellow1", "paleblue1")
+    ),
+    muted3 = list(
+      palette_colours("mojblue"),
+      palette_colours("mojblue", "yellow2"),
+      palette_colours("mojblue", "teal2", "yellow2"),
+      palette_colours("mojblue", "teal2", "pink1", "yellow1"),
+      palette_colours("mojdarkblue", "midblue1", "teal2", "pink1", "yellow1"),
+      palette_colours("mojdarkblue", "midblue1", "teal2", "lightblue1", "pink1", "yellow1")
+    ),
+    vibrant1 = list(
+      palette_colours("mojblue"),
+      palette_colours("mojblue", "mojbrightblue"),
+      palette_colours("mojblue", "mojbrightblue", "mojgrey"),
+      palette_colours("mojblue", "mojbrightblue", "mojgrey", "mojbrightorange"),
+      palette_colours("mojblue", "mojbrightblue", "mojgrey", "mojbrightorange", "mojgreen"),
+      palette_colours("mojblue", "mojbrightblue", "mojgrey", "mojbrightorange", "mojgreen", "mojpink")
+    ),
+    vibrant2 = list(
+      palette_colours("mojblue"),
+      palette_colours("mojblue", "mojbrightblue"),
+      palette_colours("mojblue", "mojbrightblue", "mojbrightorange"),
+      palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen"),
+      palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen", "mojpink"),
+      palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen", "mojpink", "mojgrey")
+    )
   )
-)
+}
 
-#' mojchart colour palette
+#' Colour scheme names
 #'
-#' Returns an mojchart colour palette as a named character vector.
+#' Returns the names of the mojchart colour schemes.
 #'
-#' @param n The required number of colours in the palette, from one to six.
+#' @export
+#' @examples
+#' scheme_names()
+scheme_names <- function(){
+  names(palettes())
+}
+
+#' Single colour palette
+#'
+#' Returns a single colour palette as a named character vector.
+#'
+#' @param n The number of colours required, from one to six.
 #' @param scheme The name of a colour scheme as a character string. Run
 #'   `scheme_names()` for the available options.
 #' @export
@@ -64,21 +84,13 @@ mojchart_palette <- function(n, scheme){
   }
 
   # Check scheme name is valid
-  if (!scheme %in% names(palettes)){
-    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: {paste(scheme_names(), collapse = " ")}.')
+  if (!scheme %in% names(palettes())){
+    scheme_names_as_string <- paste(scheme_names(), collapse = '", "')
+    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: "{scheme_names_as_string}".')
     rlang::abort(message = message)
   }
 
-  palettes[[scheme]][[n]]
-}
-
-#' Names of available palettes
-#'
-#' Returns the names of all mojchart palettes.
-#'
-#' @export
-scheme_names <- function(){
-  names(palettes)
+  palettes()[[scheme]][[n]]
 }
 
 #' Reorder a palette
@@ -88,8 +100,8 @@ scheme_names <- function(){
 #' @param x A vector to be reordered.
 #' @param order A numeric vector containing the desired order. Must be the same
 #'   length as `x` and can only contain numbers that correspond to elements of
-#'   `x`. Numbers can be repeated, which when applied to a chart will give the
-#'   same colour to multiple categories in the data.
+#'   `x`. Numbers can be repeated to apply the same colour to multiple
+#'   categories in the data.
 #' @return Returns the reordered vector.
 #' @noRd
 #' @examples

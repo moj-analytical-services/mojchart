@@ -13,28 +13,15 @@
 #' create_moj_scale(5, scheme = "vibrant1", aesthetics = "colour")
 create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
 
-  # Check n is an integer
-  if (n != as.integer(n))
-    stop("n must be an integer.")
-
-  # Check n is within range
-  if (n < 1 | n > 6){
-    stop("n must be between 1 and 6.")
-  }
-
-  # Check scheme name is valid
-  if (!scheme %in% names(palettes)){
-    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: {paste(scheme_names(), collapse = " ")}.')
-    rlang::abort(message = message)
-  }
-
   # Set default order
   if (is.null(order))
     order <- 1:n
 
-  palette_neworder <- reorder_palette(palettes[[scheme]][[n]], order)
+  pal <- mojchart_palette(n, scheme)
 
-  ggplot2::scale_discrete_manual(aesthetics, values = unname(palette_neworder), ...)
+  pal_reorder <- reorder_palette(pal, order)
+
+  ggplot2::scale_discrete_manual(aesthetics, values = unname(pal_reorder), ...)
 }
 
 #' ggplot2 scale functions

@@ -36,13 +36,14 @@ display_palette <- function(x){
 display_scheme <- function(scheme){
 
   # Check scheme name is valid
-  if (!scheme %in% names(palettes)){
-    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: {paste(scheme_names(), collapse = " ")}.')
+  if (!scheme %in% names(palettes())){
+    scheme_names_as_string <- paste(scheme_names(), collapse = '", "')
+    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: "{scheme_names_as_string}".')
     rlang::abort(message = message)
   }
 
   # Add an NA element to each palette vector for spacing in the plot
-  palette_blank_rows <- lapply(palettes[[scheme]], c, NA)
+  palette_blank_rows <- lapply(palettes()[[scheme]], c, NA)
 
   allcolour_vector <- unlist(palette_blank_rows)
   na_index <- (is.na(allcolour_vector))
@@ -91,7 +92,7 @@ swatch <- function(...){
 #' multiswatch("vibrant1")
 multiswatch <- function(...){
 
-  warning("multiswatch() has been renamed as display_palette() and will be removed in the future.", call. = FALSE)
+  warning("multiswatch() has been renamed as display_scheme() and will be removed in the future.", call. = FALSE)
 
   display_scheme(...)
 }
