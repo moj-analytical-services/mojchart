@@ -1,4 +1,4 @@
-#' Display a palette
+#' Display a colour palette
 #'
 #' Displays a vector of colours.
 #'
@@ -67,7 +67,7 @@ display_scheme <- function(scheme){
     ggplot2::scale_x_discrete(labels = unname(labels))
 }
 
-#' Display a palette
+#' Display a colour palette
 #'
 #' RENAMED: please use `display_palette()` instead.
 #'

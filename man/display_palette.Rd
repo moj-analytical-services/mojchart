@@ -2,7 +2,7 @@
 % Please edit documentation in R/display.R
 \name{display_palette}
 \alias{display_palette}
-\title{Display a palette}
+\title{Display a colour palette}
 \usage{
 display_palette(x)
 }

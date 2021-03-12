@@ -14,9 +14,8 @@ Returns a named character vector.
 }
 \description{
 Provides names and hex codes for MoJ corporate colours. Calling the function
-with no arguments returns the name and hex code of every colour. If the names
-of specific colours are passed as arguments, the function returns the names
-and hex codes for those colours alone.
+with no arguments returns every colour. If the names of specific colours are
+passed as arguments, the function returns those colours alone.
 }
 \examples{
 # All colours

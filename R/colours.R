@@ -1,9 +1,8 @@
 #' MoJ colours
 #'
 #' Provides names and hex codes for MoJ corporate colours. Calling the function
-#' with no arguments returns the name and hex code of every colour. If the names
-#' of specific colours are passed as arguments, the function returns the names
-#' and hex codes for those colours alone.
+#' with no arguments returns every colour. If the names of specific colours are
+#' passed as arguments, the function returns those colours alone.
 #'
 #' @param ... Colour names as character strings.
 #' @return Returns a named character vector.
@@ -57,8 +56,8 @@ moj_colours <- function(...){
 #' Palette colours
 #'
 #' Provides names and hex codes for colours used in the mojchart palettes. If
-#' colour names are passed as arguments, returns those colours. If
-#' no arguments are provided, returns every colour.
+#' colour names are passed as arguments, returns those colours. If no arguments
+#' are provided, returns every colour.
 #'
 #' @param ... Colour names as character strings.
 #' @return Returns a named character vector.

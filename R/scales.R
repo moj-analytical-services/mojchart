@@ -1,6 +1,6 @@
-#' Create a ggplot2 scale function for an mojchart palette
+#' Create a ggplot2 scale function for an mojchart colour palette
 #'
-#' Generates a discrete scale function for an mojchart palette and a given
+#' Generates a discrete scale function for an mojchart colour palette and a given
 #' aesthetic, using `ggplot2::scale_discrete_manual()`.
 #'
 #' @inheritParams scales
@@ -26,12 +26,12 @@ create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
 
 #' ggplot2 scale functions
 #'
-#' Scale functions for mojchart palettes.
+#' Scale functions for mojchart colour palettes.
 #'
 #' @param n The number of colours required, from one to six.
 #' @param scheme The name of an mojchart colour scheme. Run `scheme_names()` for
-#'   the available options. "Muted" schemes are generally recommended for the
-#'   fill scale and "vibrant" schemes for the colour scale.
+#'   the available options. "Muted" colour schemes are generally recommended for
+#'   the fill scale and "vibrant" colour schemes for the colour scale.
 #' @param order A numeric vector giving the order in which to apply the colours.
 #'   `order` must have length `n`. Numbers can be repeated to apply the same
 #'   colour to multiple categories in the data.

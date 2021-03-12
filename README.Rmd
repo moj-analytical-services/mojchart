@@ -44,12 +44,12 @@ To access the package colour palettes without using the scale functions:\
 To obtain the hex codes for individual colours:\
 
 * `moj_colours()` provides MoJ corporate colours;\
-* `palette_colours()` provides the colours used in the mojchart palettes.\
+* `palette_colours()` provides the colours used in the mojchart colour palettes.\
 
-To display palettes:
+To display colour palettes:
 
 * `display_palette()` displays a vector of colour hex codes;
-* `display_scheme()` displays all the palettes within a colour scheme.
+* `display_scheme()` displays all the colour palettes within a colour scheme.
 
 The function help pages (accessed using `?` or `help()` in RStudio) contain full details and examples.
 
@@ -65,9 +65,9 @@ Axis labels should be horizontal according to both the [GSS guidance](https://gs
 
 ## Colour palettes
 
-The package provides colour palettes for discrete data, grouped into several colour schemes. There are two types of colour scheme: vibrant and muted. The vibrant schemes use MoJ corporate colours and are recommended for lines or points. The muted schemes are based on MoJ colours but with reduced saturation. They are intended for shading areas, such as for bar charts, in line with the [GSS guidance on the use of colour](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9). Each colour scheme consists of six palettes, containing from one to six colours. Six colours is probably around the maximum to keep charts clear and accessible (see [below](#accessibility)).
+The package provides colour palettes for discrete data, grouped into several colour schemes. There are two types of colour scheme: vibrant and muted. The vibrant schemes use MoJ corporate colours and are recommended for lines or points. The muted schemes are based on MoJ colours but with reduced saturation. They are intended for shading areas, such as for bar charts, in line with the [GSS guidance on the use of colour](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9). Each colour scheme consists of six colour palettes, containing from one to six colours. Six colours is probably around the maximum to keep charts clear and accessible (see [below](#accessibility)).
 
-For sequential palettes or continuous data, you could look at the inbuilt [ggplot2 options](https://ggplot2-book.org/scale-colour.html), or try the [colorspace](https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html) package.
+For sequential colour palettes or continuous data, you could look at the inbuilt [ggplot2 options](https://ggplot2-book.org/scale-colour.html), or try the [colorspace](https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html) package.
 
 `scheme_names()` shows the available colour schemes.
 
@@ -76,9 +76,9 @@ library(mojchart)
 scheme_names()
 ```
 
-You can use `scale_colour_moj()` or `scale_fill_moj()` to apply a palette to a ggplot2 chart, passing the number of colours and the name of a colour scheme as arguments. There is an optional `order` parameter to change the colour order.
+You can use `scale_colour_moj()` or `scale_fill_moj()` to apply a colour palette to a ggplot2 chart, passing the number of colours and the name of a colour scheme as arguments. There is an optional `order` parameter to change the colour order.
 
-To obtain a palette as a vector, use `mojchart_palette()`, again specifying the number of colours and the colour scheme. The `display_palette()` function displays a preview.
+To obtain a colour palette as a vector, use `mojchart_palette()`, again specifying the number of colours and the colour scheme. The `display_palette()` function displays the colours.
 
 ```{r display_palette, out.width = "50%", fig.align = 'center'}
 pal <- mojchart_palette(n = 5, scheme = "muted3")
@@ -86,12 +86,12 @@ pal
 display_palette(pal)
 ```
 
-The `display_scheme()` function shows all the palettes within a colour scheme, as shown [here](man/additional-documentation/schemes.md) for each scheme.
+The `display_scheme()` function shows all the colour palettes within a colour scheme, as shown for all of the colour schemes [here](man/additional-documentation/schemes.md).
 
 
 ## Accessing individual colours
 
-`moj_colours()` provides the hex codes for all MoJ corporate colours. `palette_colours()` provides the colours used in the mojchart palettes. Running either function with no arguments returns a vector containing all the function's colours. Passing the names of individual colours returns just those.
+`moj_colours()` provides the hex codes for all MoJ corporate colours. `palette_colours()` provides the colours used in the mojchart colour palettes. Running either function with no arguments returns a vector containing all the function's colours. Passing the names of individual colours returns just those.
 
 ```{r}
 moj_colours("mojblue", "mojgreen")
@@ -100,7 +100,7 @@ moj_colours("mojblue", "mojgreen")
 
 ## Accessibility
 
-The mojchart palettes aim to be accessible to those with the most common forms of colour blindness, but accessibility does decrease the more colours you use.
+The mojchart colour palettes aim to be accessible to those with the most common forms of colour blindness, but accessibility does decrease the more colours you use.
 
 Additionally, note the following from the GSS guidance:
 
@@ -112,10 +112,10 @@ For line charts, the GSS recommends labelling lines directly where possible rath
 
 Below are two resources to help assess colour blindness accessibility.\
 
-* To simulate how an image file will appear to individuals with forms of colour blindness:
-https://www.color-blindness.com/coblis-color-blindness-simulator/.
-* To simulate the appearance of a palette of colour hex codes:
-https://davidmathlogic.com/colorblind/.
+* To simulate how an image file could appear to individuals with forms of colour blindness:\
+https://www.color-blindness.com/coblis-color-blindness-simulator/
+* To simulate the appearance of a colour palette of hex codes:\
+https://davidmathlogic.com/colorblind/
 
 
 ## Examples

@@ -62,9 +62,9 @@ scheme_names <- function(){
   names(palettes())
 }
 
-#' Single colour palette
+#' Colour palette
 #'
-#' Returns a single colour palette as a named character vector.
+#' Returns one of the package colour palettes as a named character vector.
 #'
 #' @param n The number of colours required, from one to six.
 #' @param scheme The name of a colour scheme as a character string. Run
@@ -86,16 +86,17 @@ mojchart_palette <- function(n, scheme){
   # Check scheme name is valid
   if (!scheme %in% names(palettes())){
     scheme_names_as_string <- paste(scheme_names(), collapse = '", "')
-    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: "{scheme_names_as_string}".')
+    message <- glue::glue('"{scheme}" is not a valid colour scheme name. The available colour schemes are: "{scheme_names_as_string}".')
     rlang::abort(message = message)
   }
 
   palettes()[[scheme]][[n]]
 }
 
-#' Reorder a palette
+#' Reorder a colour palette
 #'
-#' Rearranges the elements of a vector. Intended for reordering a palette.
+#' Rearranges the elements of a vector. Intended for reordering a colour
+#' palette.
 #'
 #' @param x A vector to be reordered.
 #' @param order A numeric vector containing the desired order. Must be the same
@@ -112,7 +113,7 @@ reorder_palette <- function(x, order){
 
   # Check order vector is the correct length.
   if (length(x) != length(order))
-    stop("Palette and order vector have different lengths.")
+    stop("Colour palette and order vector have different lengths.")
 
   allowed_values <- 1:length(x)
 

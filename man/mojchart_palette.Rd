@@ -2,7 +2,7 @@
 % Please edit documentation in R/palettes.R
 \name{mojchart_palette}
 \alias{mojchart_palette}
-\title{Single colour palette}
+\title{Colour palette}
 \usage{
 mojchart_palette(n, scheme)
 }
@@ -13,7 +13,7 @@ mojchart_palette(n, scheme)
 \code{scheme_names()} for the available options.}
 }
 \description{
-Returns a single colour palette as a named character vector.
+Returns one of the package colour palettes as a named character vector.
 }
 \examples{
 mojchart_palette(5, scheme = "vibrant1")

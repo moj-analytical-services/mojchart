@@ -41,13 +41,14 @@ functions:
 To obtain the hex codes for individual colours:  
 
   - `moj_colours()` provides MoJ corporate colours;  
-  - `palette_colours()` provides the colours used in the mojchart
+  - `palette_colours()` provides the colours used in the mojchart colour
     palettes.  
 
-To display palettes:
+To display colour palettes:
 
   - `display_palette()` displays a vector of colour hex codes;
-  - `display_scheme()` displays all the palettes within a colour scheme.
+  - `display_scheme()` displays all the colour palettes within a colour
+    scheme.
 
 The function help pages (accessed using `?` or `help()` in RStudio)
 contain full details and examples.
@@ -81,11 +82,11 @@ colours but with reduced saturation. They are intended for shading
 areas, such as for bar charts, in line with the [GSS guidance on the use
 of
 colour](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9).
-Each colour scheme consists of six palettes, containing from one to six
-colours. Six colours is probably around the maximum to keep charts clear
-and accessible (see [below](#accessibility)).
+Each colour scheme consists of six colour palettes, containing from one
+to six colours. Six colours is probably around the maximum to keep
+charts clear and accessible (see [below](#accessibility)).
 
-For sequential palettes or continuous data, you could look at the
+For sequential colour palettes or continuous data, you could look at the
 inbuilt [ggplot2 options](https://ggplot2-book.org/scale-colour.html),
 or try the
 [colorspace](https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html)
@@ -99,14 +100,14 @@ scheme_names()
 #> [1] "muted1"   "muted2"   "muted3"   "vibrant1" "vibrant2"
 ```
 
-You can use `scale_colour_moj()` or `scale_fill_moj()` to apply a
+You can use `scale_colour_moj()` or `scale_fill_moj()` to apply a colour
 palette to a ggplot2 chart, passing the number of colours and the name
 of a colour scheme as arguments. There is an optional `order` parameter
 to change the colour order.
 
-To obtain a palette as a vector, use `mojchart_palette()`, again
+To obtain a colour palette as a vector, use `mojchart_palette()`, again
 specifying the number of colours and the colour scheme. The
-`display_palette()` function displays a preview.
+`display_palette()` function displays the colours.
 
 ``` r
 pal <- mojchart_palette(n = 5, scheme = "muted3")
@@ -118,17 +119,17 @@ display_palette(pal)
 
 <img src="man/figures/README-display_palette-1.png" width="50%" style="display: block; margin: auto;" />
 
-The `display_scheme()` function shows all the palettes within a colour
-scheme, as shown [here](man/additional-documentation/schemes.md) for
-each scheme.
+The `display_scheme()` function shows all the colour palettes within a
+colour scheme, as shown for all of the colour schemes
+[here](man/additional-documentation/schemes.md).
 
 ## Accessing individual colours
 
 `moj_colours()` provides the hex codes for all MoJ corporate colours.
-`palette_colours()` provides the colours used in the mojchart palettes.
-Running either function with no arguments returns a vector containing
-all the function’s colours. Passing the names of individual colours
-returns just those.
+`palette_colours()` provides the colours used in the mojchart colour
+palettes. Running either function with no arguments returns a vector
+containing all the function’s colours. Passing the names of individual
+colours returns just those.
 
 ``` r
 moj_colours("mojblue", "mojgreen")
@@ -138,9 +139,9 @@ moj_colours("mojblue", "mojgreen")
 
 ## Accessibility
 
-The mojchart palettes aim to be accessible to those with the most common
-forms of colour blindness, but accessibility does decrease the more
-colours you use.
+The mojchart colour palettes aim to be accessible to those with the most
+common forms of colour blindness, but accessibility does decrease the
+more colours you use.
 
 Additionally, note the following from the GSS guidance:
 
@@ -161,11 +162,11 @@ provides one way to implement this in R.
 
 Below are two resources to help assess colour blindness accessibility.  
 
-  - To simulate how an image file will appear to individuals with forms
-    of colour blindness:
-    <https://www.color-blindness.com/coblis-color-blindness-simulator/>.
-  - To simulate the appearance of a palette of colour hex codes:
-    <https://davidmathlogic.com/colorblind/>.
+  - To simulate how an image file could appear to individuals with forms
+    of colour blindness:  
+    <https://www.color-blindness.com/coblis-color-blindness-simulator/>
+  - To simulate the appearance of a colour palette of hex codes:  
+    <https://davidmathlogic.com/colorblind/>
 
 ## Examples
 

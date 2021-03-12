@@ -14,8 +14,8 @@ scale_fill_moj(n, scheme = "muted1", order = NULL, ...)
 \item{n}{The number of colours required, from one to six.}
 
 \item{scheme}{The name of an mojchart colour scheme. Run \code{scheme_names()} for
-the available options. "Muted" schemes are generally recommended for the
-fill scale and "vibrant" schemes for the colour scale.}
+the available options. "Muted" colour schemes are generally recommended for
+the fill scale and "vibrant" colour schemes for the colour scale.}
 
 \item{order}{A numeric vector giving the order in which to apply the colours.
 \code{order} must have length \code{n}. Numbers can be repeated to apply the same
@@ -27,7 +27,7 @@ colour to multiple categories in the data.}
 Returns a ggplot2 scale function.
 }
 \description{
-Scale functions for mojchart palettes.
+Scale functions for mojchart colour palettes.
 }
 \examples{
 library(ggplot2)

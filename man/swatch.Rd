@@ -2,7 +2,7 @@
 % Please edit documentation in R/display.R
 \name{swatch}
 \alias{swatch}
-\title{Display a palette}
+\title{Display a colour palette}
 \usage{
 swatch(...)
 }
