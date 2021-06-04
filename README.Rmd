@@ -17,12 +17,13 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-mojchart is an R package to help with formatting charts in ggplot2. It includes a theme function based on [Government Statistical Service (GSS) guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/) and colour schemes based on [MoJ corporate branding](https://intranet.justice.gov.uk/guidance/communications/branding-templates/). 
+mojchart is an R package to help with formatting charts in ggplot2. It includes a theme function based on [Government Statistical Service (GSS) guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/) and colour schemes based on [MoJ corporate branding](https://intranet.justice.gov.uk/guidance/communications/branding-templates/) (MoJ internal link). 
 
+Please note that mojchart is in development.
 
 ## Installation
 
-To install, you need to have set up a GitHub personal access token. For details, see the [Analytical Platform guidance](https://user-guidance.services.alpha.mojanalytics.xyz/github.html#private-r-packages-on-github-pat-authentication). You can then install with:
+You can install mojchart with:
 
 ``` r
 install.packages("devtools")
@@ -86,7 +87,7 @@ pal
 display_palette(pal)
 ```
 
-The `display_scheme()` function shows all the colour palettes within a colour scheme, as shown for all of the colour schemes [here](man/additional-documentation/schemes.md).
+The `display_scheme()` function shows all the colour palettes within a colour scheme, as shown for every colour scheme [here](man/additional-documentation/schemes.md).
 
 
 ## Accessing individual colours
