@@ -71,8 +71,8 @@ scheme_names <- function(){
 #'   `scheme_names()` for the available options.
 #' @export
 #' @examples
-#' mojchart_palette(5, scheme = "vibrant1")
-mojchart_palette <- function(n, scheme){
+#' moj_palette(5, scheme = "vibrant1")
+moj_palette <- function(n, scheme){
 
   # Check n is an integer
   if (n != as.integer(n))
@@ -91,6 +91,21 @@ mojchart_palette <- function(n, scheme){
   }
 
   palettes()[[scheme]][[n]]
+}
+
+#' Colour palette
+#'
+#' RENAMED: please use `moj_palette()` instead.
+#'
+#' @param ... Arguments passed to `moj_palette()`.
+#' @export
+#' @examples
+#' mojchart_palette(5, scheme = "vibrant1")
+mojchart_palette <- function(...){
+
+  warning("mojchart_palette() has been renamed as moj_palette() and will be removed in the future.", call. = FALSE)
+
+  moj_palette(...)
 }
 
 #' Reorder a colour palette

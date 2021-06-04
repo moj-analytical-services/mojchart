@@ -39,7 +39,7 @@ The package provides the following custom ggplot2 functions:\
 
 To access the package colour palettes without using the scale functions:\
 
-* `mojchart_palette()` returns a colour palette as a vector.\
+* `moj_palette()` returns a colour palette as a vector.\
 
 To obtain the hex codes for individual colours:\
 
@@ -78,10 +78,10 @@ scheme_names()
 
 You can use `scale_colour_moj()` or `scale_fill_moj()` to apply a colour palette to a ggplot2 chart, passing the number of colours and the name of a colour scheme as arguments. There is an optional `order` parameter to change the colour order.
 
-To obtain a colour palette as a vector, use `mojchart_palette()`, again specifying the number of colours and the colour scheme. The `display_palette()` function displays the colours.
+To obtain a colour palette as a vector, use `moj_palette()`, again specifying the number of colours and the colour scheme. The `display_palette()` function displays the colours.
 
 ```{r display_palette, out.width = "50%", fig.align = 'center'}
-pal <- mojchart_palette(n = 5, scheme = "muted3")
+pal <- moj_palette(n = 5, scheme = "muted3")
 pal
 display_palette(pal)
 ```

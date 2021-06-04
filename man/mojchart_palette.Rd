@@ -4,16 +4,13 @@
 \alias{mojchart_palette}
 \title{Colour palette}
 \usage{
-mojchart_palette(n, scheme)
+mojchart_palette(...)
 }
 \arguments{
-\item{n}{The number of colours required, from one to six.}
-
-\item{scheme}{The name of a colour scheme as a character string. Run
-\code{scheme_names()} for the available options.}
+\item{...}{Arguments passed to \code{moj_palette()}.}
 }
 \description{
-Returns one of the package colour palettes as a named character vector.
+RENAMED: please use \code{moj_palette()} instead.
 }
 \examples{
 mojchart_palette(5, scheme = "vibrant1")

@@ -17,7 +17,7 @@ create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
   if (is.null(order))
     order <- 1:n
 
-  pal <- mojchart_palette(n, scheme)
+  pal <- moj_palette(n, scheme)
 
   pal_reorder <- reorder_palette(pal, order)
 
