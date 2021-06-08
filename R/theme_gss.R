@@ -43,12 +43,15 @@ theme_gss <- function(base_size = 11, base_line_size = 0.5, flipped = FALSE, xti
           panel.background = element_blank(),
           legend.title = element_blank(),
           legend.key = element_blank(),
-          legend.key.size = unit(2, "lines"),
+          legend.key.size = unit(1.5, "lines"),
           plot.title = element_text(face = "bold"),
           plot.subtitle = element_text(margin = margin(b = 10)),
           plot.caption = element_text(hjust = 0, margin = margin(t = 10)),
           plot.title.position = "plot",
-          plot.caption.position = "plot"
+          plot.caption.position = "plot",
+          panel.spacing = unit(1, "lines"),
+          strip.background = element_blank(),
+          strip.text = element_text(face = "bold")
     )
 
   # To add for regular orientation
