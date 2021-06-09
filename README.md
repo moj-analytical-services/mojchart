@@ -25,7 +25,7 @@ install.packages("devtools")
 devtools::install_github("moj-analytical-services/mojchart")
 ```
 
-## Main functions
+## Overview
 
 The package provides the following custom ggplot2 functions:  
 
@@ -36,7 +36,8 @@ The package provides the following custom ggplot2 functions:
 To access the package colour palettes without using the scale
 functions:  
 
-  - `moj_palette()` returns a colour palette as a vector.  
+  - `moj_palette()` returns a colour palette as a vector of colour hex
+    codes.  
 
 To obtain the hex codes for individual colours:  
 
@@ -47,8 +48,8 @@ To obtain the hex codes for individual colours:
 To display colour palettes:
 
   - `display_palette()` displays a vector of colour hex codes;
-  - `display_scheme()` displays all the colour palettes within a colour
-    scheme.
+  - `display_scheme()` displays all the colour palettes within an
+    mojchart colour scheme.
 
 The function help pages (accessed using `?` or `help()` in RStudio)
 contain full details and examples.
@@ -66,7 +67,7 @@ and [ONS web accessibility
 guidance](https://style.ons.gov.uk/writing-for-the-web/web-accessibility/accessible-charts/).
 To that end, `theme_gss()` suppresses the ggplot2 y axis label; a label
 can instead be included within the ggplot2 subtitle if required. This is
-demonstrated by the second of the example charts [below](#examples).
+demonstrated by [example 2](#example-2-grouped-bar-chart) below.
 
 `theme_gss()` includes parameters to show or hide the x axis label and x
 axis tick marks. Setting the parameter `flipped = TRUE` reverses the x
@@ -171,11 +172,12 @@ Below are two resources to help assess colour blindness accessibility.
 ## Examples
 
 The examples below show the use of `theme_gss()`, `scale_colour_moj()`
-and `scale_fill_moj()`, together with other ggplot2 functions, to format
-complete charts. The data frames for the charts are produced by two
-mojchart functions, `familystarts_reduced()` and `bars()`.
+and `scale_fill_moj()`, together with various ggplot2 functions, to
+create fully formatted charts. The data frames for the charts are
+produced by two mojchart functions, `familystarts_reduced()` and
+`bars()`.
 
-### Example line chart
+### Example 1: line chart
 
   - In this example note that the line thickness has been increased in
     `geom_line()` so that the colours stand out more, making the
@@ -202,12 +204,12 @@ ggplot(familystarts_reduced(6), aes(x = year_qtr, y = count, colour = case_type)
 
 ![](man/figures/README-example1-1.png)<!-- -->
 
-### Example bar chart
+### Example 2: grouped bar chart
 
 ``` r
 ggplot(bars(5), aes(x = col1, y = col3, fill = col2)) +
-  geom_col(position = "dodge") +
-  labs(title = "Example dodged bar chart",
+  geom_col(position = position_dodge2(padding = 0), width = 0.8) +
+  labs(title = "Example grouped bar chart",
        subtitle = "Additional details here\n\nAxis label",
        caption = "Source") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
@@ -218,13 +220,13 @@ ggplot(bars(5), aes(x = col1, y = col3, fill = col2)) +
 
 ![](man/figures/README-example2-1.png)<!-- -->
 
-### Example flipped bar chart
+### Example 3: horizontal bar chart
 
 ``` r
 ggplot(bars(3), aes(x = col1, y = col3, fill = col2)) +
-  geom_col(position = "dodge") +
+  geom_col(position = "dodge", width = 0.7) +
   coord_flip() +
-  labs(title = "Example flipped bar chart",
+  labs(title = "Example horizontal bar chart",
        subtitle = "Additional details here\n",
        caption = "Source",
        y = "Axis label") +
