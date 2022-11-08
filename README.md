@@ -7,19 +7,13 @@
 <!-- badges: end -->
 
 mojchart is an R package to help with formatting charts in ggplot2. It
-includes a theme function based on [Government Statistical Service (GSS)
-guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/)
-and colour schemes based on [MoJ corporate
+includes a theme function based on [Government Analysis Function
+guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
+and colour palettes based on both [MoJ corporate
 branding](https://intranet.justice.gov.uk/guidance/communications/branding-templates/)
-(MoJ internal link). It also includes chart colour palettes created by
-the [Govenment Analysis
-Function](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/).
-Note that the GSS guidance has been updated and is now on the [Analysis
-Function
-website](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/).
-The guidance on chart formatting remains similar to the previous GSS
-guidance. The guidance on the use of colour has changed to meet web
-accessibility requirements.
+(MoJ internal link) and Government Analysis Function guidance on
+[colours for data
+visualisation](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/).
 
 ## Installation
 
@@ -34,7 +28,8 @@ devtools::install_github("moj-analytical-services/mojchart")
 
 The package provides the following custom ggplot2 functions:  
 
--   `theme_gss()` - a theme based on GSS guidance;  
+-   `theme_gss()` - a theme based on Government Analysis Function
+    guidance;  
 -   `scale_colour_moj()` and `scale_fill_moj()` for applying mojchart
     colour palettes.
 
@@ -61,12 +56,12 @@ To display colour palettes:
 The function help pages (accessed using `?` or `help()` in RStudio)
 contain full details and examples.
 
-## GSS theme
+## Theme function
 
-The main principle behind `theme_gss()` is to simplify the chart and
-remove unecessary formatting. The theme allows for a main title plus a
-subtitle for statistical details. The data source can be shown in the
-caption below the chart.
+The main principle behind the theme function `theme_gss()` is to
+simplify the chart and remove unecessary formatting. The theme allows
+for a main title plus a subtitle for statistical details. The data
+source can be shown in the caption below the chart.
 
 Axis labels should be horizontal according to the [Analysis Function
 guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-7)
@@ -77,6 +72,10 @@ demonstrated by [example 2](#example-2-grouped-bar-chart) below.
 `theme_gss()` includes parameters to show or hide the x axis label and x
 axis tick marks. Setting the parameter `flipped = TRUE` reverses the x
 and y axes for use with `coord_flip()`.
+
+Note that the name `theme_gss()` is because the Analysis Function
+Guidance was previously provided by the Government Statistical Service
+(GSS).
 
 ## Colour palettes
 
