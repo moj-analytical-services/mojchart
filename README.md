@@ -241,7 +241,7 @@ ggplot(bars(3), aes(x = col1, y = col3, fill = col2)) +
   expand_limits(y = 10) +
   guides(fill = guide_legend(reverse = TRUE)) +
   theme_gss(flipped = TRUE, xlabel = TRUE) +
-  scale_fill_moj(3, scheme = "muted1")
+  scale_fill_moj(3, scheme = "govanal_bars")
 ```
 
 ![](man/figures/README-example3-1.png)<!-- -->
