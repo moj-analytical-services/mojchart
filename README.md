@@ -96,8 +96,8 @@ There is one colour scheme for bar charts and one for line charts.
 For MoJ corporate colours, there are two types of colour scheme: vibrant
 and muted. The vibrant schemes use MoJ corporate colours directly. The
 muted schemes are based on MoJ colours but with reduced saturation.
-Reduced saturation was previously recommended in \[GSS
-guidance\]((<https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9>)
+Reduced saturation was previously recommended in [GSS
+guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9)
 for shading areas, such as for bar charts, and might still be
 appropriate in some settings.
 
@@ -173,8 +173,8 @@ Below are two resources to help assess colour blindness accessibility.
 -   To simulate the appearance of a colour palette of hex codes:  
     <https://davidmathlogic.com/colorblind/>
 
-Note that for line charts, the guidance recommends labelling lines
-directly rather than using a separate legend. The
+Note that for line charts, the Analysis Function guidance recommends
+labelling lines directly rather than using a separate legend. The
 [directlabels](http://directlabels.r-forge.r-project.org/) package
 provides one way to implement this in R.
 
