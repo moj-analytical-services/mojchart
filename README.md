@@ -98,7 +98,8 @@ package.
 ``` r
 library(mojchart)
 scheme_names()
-#> [1] "muted1"   "muted2"   "muted3"   "vibrant1" "vibrant2"
+#> [1] "muted1"        "muted2"        "muted3"        "vibrant1"     
+#> [5] "vibrant2"      "govanal_bars"  "govanal_lines"
 ```
 
 You can use `scale_colour_moj()` or `scale_fill_moj()` to apply a colour
