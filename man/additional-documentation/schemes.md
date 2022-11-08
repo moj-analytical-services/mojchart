@@ -43,3 +43,19 @@ display_scheme("vibrant2")
 ```
 
 ![](../figures/schemes-vibrant2-1.png)<!-- -->
+
+### govanal_bars
+
+``` r
+display_scheme("govanal_bars")
+```
+
+![](../figures/schemes-govanal_bars-1.png)<!-- -->
+
+### govanal_lines
+
+``` r
+display_scheme("govanal_lines")
+```
+
+![](../figures/schemes-govanal_lines-1.png)<!-- -->
