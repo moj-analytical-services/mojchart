@@ -53,6 +53,37 @@ moj_colours <- function(...){
   subset_colours(colours, fun = "moj_colours", ...)
 }
 
+#' Government Analysis Function colours
+#'
+#' Provides names and hex codes for the Government Analysis Function colours.
+#' Calling the function with no arguments returns every colour. If the names of
+#' specific colours are passed as arguments, the function returns those colours
+#' alone. See <https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/>
+#'
+#' @param ... Colour names as character strings.
+#' @return Returns a named character vector.
+#' @family available colours
+#' @export
+#' @examples
+#' # All colours
+#' govanal_colours()
+#'
+#' # Selected colours
+#' govanal_colours("govanal_darkblue", "govanal_orange")
+govanal_colours <- function(...){
+
+  colours <- c(
+    govanal_darkblue = "#12436D",
+    govanal_turquoise = "#28A197",
+    govanal_darkpink = "#801650",
+    govanal_orange = "#F46A25",
+    govanal_darkgrey = "#3D3D3D",
+    govanal_lightpurple = "#A285D1"
+  )
+
+  subset_colours(colours, fun = "moj_colours", ...)
+}
+
 #' Palette colours
 #'
 #' Provides names and hex codes for colours used in the mojchart palettes. If
@@ -90,7 +121,16 @@ palette_colours <- function(...){
     teal2 = "#59a6a4",
     yellow1 = "#feebb3",
     yellow2 = "#fde59b",
-    pink1 = "#f3bee0"
+    pink1 = "#f3bee0",
+
+    # Government Analysis Function colours
+    # https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/
+    govanal_darkblue = "#12436D",
+    govanal_turquoise = "#28A197",
+    govanal_darkpink = "#801650",
+    govanal_orange = "#F46A25",
+    govanal_darkgrey = "#3D3D3D",
+    govanal_lightpurple = "#A285D1"
   )
 
   subset_colours(colours, fun = "palette_colours", ...)

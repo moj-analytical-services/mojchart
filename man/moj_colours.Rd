@@ -29,6 +29,7 @@ MoJ branding intranet page:
 \url{https://intranet.justice.gov.uk/guidance/communications/branding-templates/}
 
 Other available colours: 
+\code{\link{govanal_colours}()},
 \code{\link{palette_colours}()}
 }
 \concept{available colours}

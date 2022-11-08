@@ -47,6 +47,22 @@ palettes <- function(){
       palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen"),
       palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen", "mojpink"),
       palette_colours("mojblue", "mojbrightblue", "mojbrightorange", "mojgreen", "mojpink", "mojgrey")
+    ),
+    govanal_bars = list(
+      palette_colours("govanal_darkblue"),
+      palette_colours("govanal_darkblue", "govanal_turquoise"),
+      palette_colours("govanal_darkblue", "govanal_turquoise", "govanal_darkpink"),
+      palette_colours("govanal_darkblue", "govanal_turquoise", "govanal_darkpink", "govanal_orange"),
+      palette_colours("govanal_darkblue", "govanal_turquoise", "govanal_darkpink", "govanal_orange", "govanal_darkgrey"),
+      palette_colours("govanal_darkblue", "govanal_turquoise", "govanal_darkpink", "govanal_orange", "govanal_darkgrey", "govanal_lightpurple")
+    ),
+    govanal_lines = list(
+      palette_colours("govanal_darkblue"),
+      palette_colours("govanal_darkblue", "govanal_orange"),
+      palette_colours("govanal_darkblue", "govanal_orange", "govanal_turquoise"),
+      palette_colours("govanal_darkblue", "govanal_orange", "govanal_turquoise", "govanal_darkpink"),
+      palette_colours("govanal_darkblue", "govanal_orange", "govanal_turquoise", "govanal_darkpink", "govanal_lightpurple"),
+      palette_colours("govanal_darkblue", "govanal_orange", "govanal_turquoise", "govanal_darkpink", "govanal_lightpurple", "govanal_darkgrey")
     )
   )
 }

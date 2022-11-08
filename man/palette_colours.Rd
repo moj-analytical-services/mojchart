@@ -26,6 +26,7 @@ palette_colours("mojblue", "yellow1")
 }
 \seealso{
 Other available colours: 
+\code{\link{govanal_colours}()},
 \code{\link{moj_colours}()}
 }
 \concept{available colours}
