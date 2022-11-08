@@ -95,7 +95,8 @@ There is one colour scheme for bar charts and one for line charts.
 For MoJ corporate colours, there are two types of colour scheme: vibrant
 and muted. The vibrant schemes use MoJ corporate colours directly. The
 muted schemes are based on MoJ colours but with reduced saturation.
-Reduced saturation was previously recommended in [GSS
+Reduced saturation was previously recommended in [Government Statistical
+Service
 guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9)
 for shading areas, such as for bar charts, and might still be
 appropriate in some settings.
