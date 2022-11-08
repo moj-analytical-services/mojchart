@@ -90,7 +90,16 @@ palette_colours <- function(...){
     teal2 = "#59a6a4",
     yellow1 = "#feebb3",
     yellow2 = "#fde59b",
-    pink1 = "#f3bee0"
+    pink1 = "#f3bee0",
+
+    # Government Analysis Function colours
+    # https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/
+    govanal_darkblue = "#12436D",
+    govanal_turquoise = "#28A197",
+    govanal_darkpink = "#801650",
+    govanal_orange = "#F46A25",
+    govanal_darkgrey = "#3D3D3D",
+    govanal_lightpurple = "#A285D1"
   )
 
   subset_colours(colours, fun = "palette_colours", ...)

@@ -46,3 +46,13 @@ display_scheme("vibrant1")
 ```{r vibrant2}
 display_scheme("vibrant2")
 ```
+
+### govanal_bars
+```{r govanal_bars}
+display_scheme("govanal_bars")
+```
+
+### govanal_lines
+```{r govanal_lines}
+display_scheme("govanal_lines")
+```
