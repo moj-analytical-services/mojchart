@@ -4,7 +4,6 @@
 # mojchart
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 mojchart is an R package to help with formatting charts in ggplot2. It
@@ -12,9 +11,15 @@ includes a theme function based on [Government Statistical Service (GSS)
 guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/)
 and colour schemes based on [MoJ corporate
 branding](https://intranet.justice.gov.uk/guidance/communications/branding-templates/)
-(MoJ internal link).
-
-Please note that mojchart is in development.
+(MoJ internal link). It also includes chart colour palettes created by
+the [Govenment Analysis
+Function](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/).
+Note that the GSS guidance has been updated and is now on the [Analysis
+Function
+website](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/).
+The guidance on chart formatting remains similar to the previous GSS
+guidance. The guidance on the use of colour has changed to meet web
+accessibility requirements.
 
 ## Installation
 
@@ -29,26 +34,28 @@ devtools::install_github("moj-analytical-services/mojchart")
 
 The package provides the following custom ggplot2 functions:  
 
-  - `theme_gss()` - a theme based on GSS guidance;  
-  - `scale_colour_moj()` and `scale_fill_moj()` for applying mojchart
+-   `theme_gss()` - a theme based on GSS guidance;  
+-   `scale_colour_moj()` and `scale_fill_moj()` for applying mojchart
     colour palettes.
 
 To access the package colour palettes without using the scale
 functions:  
 
-  - `moj_palette()` returns a colour palette as a vector of colour hex
+-   `moj_palette()` returns a colour palette as a vector of colour hex
     codes.  
 
 To obtain the hex codes for individual colours:  
 
-  - `moj_colours()` provides MoJ corporate colours;  
-  - `palette_colours()` provides the colours used in the mojchart colour
+-   `moj_colours()` provides MoJ corporate colours;  
+-   `govanal_colours()` provides colours from the Government Analysis
+    Function colour palettes  
+-   `palette_colours()` provides the colours used in the mojchart colour
     palettes.  
 
 To display colour palettes:
 
-  - `display_palette()` displays a vector of colour hex codes;
-  - `display_scheme()` displays all the colour palettes within an
+-   `display_palette()` displays a vector of colour hex codes;
+-   `display_scheme()` displays all the colour palettes within an
     mojchart colour scheme.
 
 The function help pages (accessed using `?` or `help()` in RStudio)
@@ -61,10 +68,8 @@ remove unecessary formatting. The theme allows for a main title plus a
 subtitle for statistical details. The data source can be shown in the
 caption below the chart.
 
-Axis labels should be horizontal according to both the [GSS
-guidance](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-2:~:text=Things%20to%20include%20with%20your%20graph)
-and [ONS web accessibility
-guidance](https://style.ons.gov.uk/writing-for-the-web/web-accessibility/accessible-charts/).
+Axis labels should be horizontal according to the [Analysis Function
+guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-7)
 To that end, `theme_gss()` suppresses the ggplot2 y axis label; a label
 can instead be included within the ggplot2 subtitle if required. This is
 demonstrated by [example 2](#example-2-grouped-bar-chart) below.
@@ -76,16 +81,25 @@ and y axes for use with `coord_flip()`.
 ## Colour palettes
 
 The package provides colour palettes for discrete data, grouped into
-several colour schemes. There are two types of colour scheme: vibrant
-and muted. The vibrant schemes use MoJ corporate colours and are
-recommended for lines or points. The muted schemes are based on MoJ
-colours but with reduced saturation. They are intended for shading
-areas, such as for bar charts, in line with the [GSS guidance on the use
-of
-colour](https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9).
-Each colour scheme consists of six colour palettes, containing from one
-to six colours. Six colours is probably around the maximum to keep
-charts clear and accessible (see [below](#accessibility)).
+several colour schemes. Each colour scheme consists of six colour
+palettes, containing from one to six colours. Note that the [Analysis
+Function
+guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-5)
+recommends aiming for a maximum of four colours on a chart to avoid the
+chart becomming too cluttered.
+
+The Analysis Function colour palettes are taken from the [Analysis
+Function
+guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4).
+There is one colour scheme for bar charts and one for line charts.
+
+For MoJ corporate colours, there are two types of colour scheme: vibrant
+and muted. The vibrant schemes use MoJ corporate colours directly. The
+muted schemes are based on MoJ colours but with reduced saturation.
+Reduced saturation was previously recommended in \[GSS
+guidance\]((<https://gss.civilservice.gov.uk/policy-store/introduction-to-data-visualisation/#section-9>)
+for shading areas, such as for bar charts, and might still be
+appropriate in some settings.
 
 For sequential colour palettes or continuous data, you could look at the
 inbuilt [ggplot2 options](https://ggplot2-book.org/scale-colour.html),
@@ -93,7 +107,7 @@ or try the
 [colorspace](https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html)
 package.
 
-`scheme_names()` shows the available colour schemes.
+`scheme_names()` returns the colour scheme names.
 
 ``` r
 library(mojchart)
@@ -128,10 +142,11 @@ colour scheme, as shown for every colour scheme
 ## Accessing individual colours
 
 `moj_colours()` provides the hex codes for all MoJ corporate colours.
-`palette_colours()` provides the colours used in the mojchart colour
-palettes. Running either function with no arguments returns a vector
-containing all the function’s colours. Passing the names of individual
-colours returns just those.
+`govanal_colours` provides the Government Analysis Function colours.
+`palette_colours()` provides all colours used in the mojchart colour
+palettes. Running one of these functions with no arguments returns a
+vector containing all of the available colours. Passing the names of
+individual colours returns just those.
 
 ``` r
 moj_colours("mojblue", "mojgreen")
@@ -141,34 +156,27 @@ moj_colours("mojblue", "mojgreen")
 
 ## Accessibility
 
+See the [Analysis Function
+guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/)
+for a full discussion of accessibility considerations regarding the use
+of colour in charts.
+
 The mojchart colour palettes aim to be accessible to those with the most
 common forms of colour blindness, but accessibility does decrease the
 more colours you use.
 
-Additionally, note the following from the GSS guidance:
-
-> Never use colour to specify something on its own. People often print
-> documents in black and white. Some people are colour-blind. It’s
-> important not to rely on colour alone to add meaning to your data.
-
-Similar points are made in web accessibility guidance from the [Office
-for National Statistics
-(ONS)](https://style.ons.gov.uk/writing-for-the-web/web-accessibility/accessible-charts/)
-and the [Government Digital Service
-(GDS)](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag).
-
-For line charts, the GSS recommends labelling lines directly where
-possible rather than using a legend. The
-[directlabels](http://directlabels.r-forge.r-project.org/) package
-provides one way to implement this in R.
-
 Below are two resources to help assess colour blindness accessibility.  
 
-  - To simulate how an image file could appear to individuals with forms
+-   To simulate how an image file could appear to individuals with forms
     of colour blindness:  
     <https://www.color-blindness.com/coblis-color-blindness-simulator/>
-  - To simulate the appearance of a colour palette of hex codes:  
+-   To simulate the appearance of a colour palette of hex codes:  
     <https://davidmathlogic.com/colorblind/>
+
+Note that for line charts, the guidance recommends labelling lines
+directly rather than using a separate legend. The
+[directlabels](http://directlabels.r-forge.r-project.org/) package
+provides one way to implement this in R.
 
 ## Examples
 
@@ -180,11 +188,9 @@ produced by two mojchart functions, `familystarts_reduced()` and
 
 ### Example 1: line chart
 
-  - In this example note that the line thickness has been increased in
+-   In this example note that the line thickness has been increased in
     `geom_line()` so that the colours stand out more, making the
     categories easier to identify.
-
-<!-- end list -->
 
 ``` r
 library(mojchart)
