@@ -74,7 +74,7 @@ axis tick marks. Setting the parameter `flipped = TRUE` reverses the x
 and y axes for use with `coord_flip()`.
 
 Note that the name `theme_gss()` is because the Analysis Function
-Guidance was previously provided by the Government Statistical Service
+guidance was previously provided by the Government Statistical Service
 (GSS).
 
 ## Colour palettes
@@ -142,7 +142,7 @@ colour scheme, as shown for every colour scheme
 ## Accessing individual colours
 
 `moj_colours()` provides the hex codes for all MoJ corporate colours.
-`govanal_colours` provides the Government Analysis Function colours.
+`govanal_colours()` provides the Government Analysis Function colours.
 `palette_colours()` provides all colours used in the mojchart colour
 palettes. Running one of these functions with no arguments returns a
 vector containing all of the available colours. Passing the names of
@@ -214,15 +214,15 @@ ggplot(familystarts_reduced(6), aes(x = year_qtr, y = count, colour = case_type)
 ### Example 2: grouped bar chart
 
 ``` r
-ggplot(bars(5), aes(x = col1, y = col3, fill = col2)) +
-  geom_col(position = position_dodge2(padding = 0), width = 0.8) +
+ggplot(bars(4), aes(x = col1, y = col3, fill = col2)) +
+  geom_col(position = position_dodge2(padding = 0.2), width = 0.8) +
   labs(title = "Example grouped bar chart",
        subtitle = "Additional details here\n\nAxis label",
        caption = "Source") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
   expand_limits(y = 10) +
   theme_gss() +
-  scale_fill_moj(5, scheme = "muted2")
+  scale_fill_moj(4, scheme = "muted2")
 ```
 
 ![](man/figures/README-example2-1.png)<!-- -->
@@ -231,7 +231,7 @@ ggplot(bars(5), aes(x = col1, y = col3, fill = col2)) +
 
 ``` r
 ggplot(bars(3), aes(x = col1, y = col3, fill = col2)) +
-  geom_col(position = "dodge", width = 0.7) +
+  geom_col(position = "dodge2", width = 0.8) +
   coord_flip() +
   labs(title = "Example horizontal bar chart",
        subtitle = "Additional details here\n",
