@@ -5,10 +5,10 @@
 #' @param x A character vector of colours.
 #' @export
 #' @examples
-#' display_palette(c("#039BE5", "#E91E63", "#FFB300"))
-#' display_palette(mojchart_palette(4, scheme = "muted1"))
-#' display_palette(moj_colours())
-display_palette <- function(x){
+#' display_colours(c("#039BE5", "#E91E63", "#FFB300"))
+#' display_colours(mojchart_palette(4, palette = "muted1"))
+#' display_colours(moj_colours())
+display_colours <- function(x){
 
   df <- dplyr::tibble(x = factor(1:length(x)), y = 1)
 
@@ -28,22 +28,22 @@ display_palette <- function(x){
 #'
 #' Preview all the palettes contained within an mojchart colour scheme.
 #'
-#' @param scheme The name of an mojchart colour scheme. Run `scheme_names()` for
+#' @param palette The name of an mojchart colour scheme. Run `palette_names()` for
 #'   the available options.
 #' @export
 #' @examples
-#' display_scheme("vibrant1")
-display_scheme <- function(scheme){
+#' display_palette("vibrant1")
+display_palette <- function(palette){
 
-  # Check scheme name is valid
-  if (!scheme %in% names(palettes())){
-    scheme_names_as_string <- paste(scheme_names(), collapse = '", "')
-    message <- glue::glue('"{scheme}" is not a valid scheme name. The available schemes are: "{scheme_names_as_string}".')
+  # Check palette name is valid
+  if (!palette %in% names(palettes())){
+    palette_names_as_string <- paste(palette_names(), collapse = '", "')
+    message <- glue::glue('"{palette}" is not a valid palette name. The available schemes are: "{palette_names_as_string}".')
     rlang::abort(message = message)
   }
 
   # Add an NA element to each palette vector for spacing in the plot
-  palette_blank_rows <- lapply(palettes()[[scheme]], c, NA)
+  palette_blank_rows <- lapply(palettes()[[palette]], c, NA)
 
   allcolour_vector <- unlist(palette_blank_rows)
   na_index <- (is.na(allcolour_vector))
@@ -65,34 +65,4 @@ display_scheme <- function(scheme){
     ggplot2::scale_fill_manual(values = unname(allcolour_vector)) +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = 0.02)) +
     ggplot2::scale_x_discrete(labels = unname(labels))
-}
-
-#' Display a colour palette
-#'
-#' RENAMED: please use `display_palette()` instead.
-#'
-#' @param ... Arguments passed to `display_palette()`.
-#' @export
-#' @examples
-#' swatch(moj_colours())
-swatch <- function(...){
-
-  warning("swatch() has been renamed as display_palette() and will be removed in the future.", call. = FALSE)
-
-  display_palette(...)
-}
-
-#' Display a colour scheme
-#'
-#' RENAMED: please use `display_scheme()` instead.
-#'
-#' @param ... Arguments passed to `display_scheme()`.
-#' @export
-#' @examples
-#' multiswatch("vibrant1")
-multiswatch <- function(...){
-
-  warning("multiswatch() has been renamed as display_scheme() and will be removed in the future.", call. = FALSE)
-
-  display_scheme(...)
 }

@@ -40,6 +40,7 @@ theme_gss <- function(base_size = 11, base_line_size = 0.5, flipped = FALSE, xti
           axis.ticks = element_blank(),
           axis.ticks.length = unit(0.5, "lines"),
           axis.title = element_blank(),
+          axis.text = element_text(color = "black"),
           panel.background = element_blank(),
           legend.title = element_blank(),
           legend.key = element_blank(),

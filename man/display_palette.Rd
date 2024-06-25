@@ -2,18 +2,17 @@
 % Please edit documentation in R/display.R
 \name{display_palette}
 \alias{display_palette}
-\title{Display a colour palette}
+\title{Display a colour scheme}
 \usage{
-display_palette(x)
+display_palette(palette)
 }
 \arguments{
-\item{x}{A character vector of colours.}
+\item{palette}{The name of an mojchart colour scheme. Run \code{palette_names()} for
+the available options.}
 }
 \description{
-Displays a vector of colours.
+Preview all the palettes contained within an mojchart colour scheme.
 }
 \examples{
-display_palette(c("#039BE5", "#E91E63", "#FFB300"))
-display_palette(mojchart_palette(4, scheme = "muted1"))
-display_palette(moj_colours())
+display_palette("vibrant1")
 }

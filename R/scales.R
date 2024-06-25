@@ -10,14 +10,14 @@
 #' @noRd
 #' @examples
 #' library(ggplot2)
-#' create_moj_scale(5, scheme = "vibrant1", aesthetics = "colour")
-create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
+#' create_moj_scale(5, palette = "vibrant1", aesthetics = "colour")
+create_moj_scale <- function(n, palette, order = NULL, aesthetics, ...){
 
   # Set default order
   if (is.null(order))
     order <- 1:n
 
-  pal <- moj_palette(n, scheme)
+  pal <- moj_palette(n, palette)
 
   pal_reorder <- reorder_palette(pal, order)
 
@@ -29,9 +29,9 @@ create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
 #' Scale functions for mojchart colour palettes.
 #'
 #' @param n The number of colours required, from one to six.
-#' @param scheme The name of an mojchart colour scheme. Run `scheme_names()` for
-#'   the available options. "Muted" colour schemes are generally recommended for
-#'   the fill scale and "vibrant" colour schemes for the colour scale.
+#' @param palette The name of an mojchart colour palette. Run `palette_names()` for
+#'   the available options. "Muted" colour palettes are generally recommended for
+#'   the fill scale and "vibrant" colour palettes for the colour scale.
 #' @param order A numeric vector giving the order in which to apply the colours.
 #'   `order` must have length `n`. Numbers can be repeated to apply the same
 #'   colour to multiple categories in the data.
@@ -42,22 +42,22 @@ create_moj_scale <- function(n, scheme, order = NULL, aesthetics, ...){
 #' library(ggplot2)
 #' ggplot(familystarts_reduced(6), aes(x = year_qtr, y = count, colour = case_type)) +
 #'   geom_line(size = 1.5) +
-#'   scale_colour_moj(n = 6, scheme = "vibrant1")
+#'   scale_colour_moj(n = 6, palette = "vibrant1")
 #'
 #' library(ggplot2)
 #' ggplot(bars(3), aes(x = col1, y = col3, fill = col2)) +
 #'   geom_col() +
-#'   scale_fill_moj(n = 3, scheme = "muted2")
+#'   scale_fill_moj(n = 3, palette = "muted2")
 NULL
 
 #' @rdname scales
 #' @export
-scale_colour_moj <- function(n, scheme = "vibrant1", order = NULL, ...){
-  create_moj_scale(n, scheme, order, aesthetics = "colour", ...)
+scale_colour_moj <- function(n, palette = "vibrant1", order = NULL, ...){
+  create_moj_scale(n, palette, order, aesthetics = "colour", ...)
 }
 
 #' @rdname scales
 #' @export
-scale_fill_moj <- function(n, scheme = "muted1", order = NULL, ...){
-  create_moj_scale(n, scheme, order, aesthetics = "fill", ...)
+scale_fill_moj <- function(n, palette = "muted1", order = NULL, ...){
+  create_moj_scale(n, palette, order, aesthetics = "fill", ...)
 }

@@ -13,5 +13,5 @@ mojchart_palette(...)
 RENAMED: please use \code{moj_palette()} instead.
 }
 \examples{
-mojchart_palette(5, scheme = "vibrant1")
+mojchart_palette(5, palette = "vibrant1")
 }
