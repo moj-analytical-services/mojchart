@@ -1,6 +1,6 @@
 Package: mojchart
 Title: MoJ Colours and a GSS Style Theme for ggplot2
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person(given = "Graham",
            family = "Ison",
