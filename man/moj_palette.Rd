@@ -4,17 +4,17 @@
 \alias{moj_palette}
 \title{Colour palette}
 \usage{
-moj_palette(n, scheme)
+moj_palette(n, palette)
 }
 \arguments{
 \item{n}{The number of colours required, from one to six.}
 
-\item{scheme}{The name of a colour scheme as a character string. Run
-\code{scheme_names()} for the available options.}
+\item{palette}{The name of a colour palette as a character string. One of
+govanal_bars, govanal_lines, muted1, muted2, muted3, vibrant1, vibrant2}
 }
 \description{
 Returns one of the package colour palettes as a named character vector.
 }
 \examples{
-moj_palette(5, scheme = "vibrant1")
+moj_palette(5, palette = "vibrant1")
 }

@@ -1,7 +1,7 @@
 #' Colour palettes
 #'
-#' Returns a named list containing the package colour schemes. Each colour
-#' scheme contains six palettes, with one to six colours.
+#' Returns a named list containing the package colour palettes Each colour
+#' palette contains six sub-palettes, with one to six colours.
 #'
 #' @noRd
 #' @examples
@@ -67,14 +67,14 @@ palettes <- function(){
   )
 }
 
-#' Colour scheme names
+#' Colour palette names
 #'
-#' Returns the names of the mojchart colour schemes.
+#' Returns the names of the mojchart colour palettes.
 #'
 #' @export
 #' @examples
-#' scheme_names()
-scheme_names <- function(){
+#' palette_names()
+palette_names <- function(){
   names(palettes())
 }
 
@@ -83,12 +83,12 @@ scheme_names <- function(){
 #' Returns one of the package colour palettes as a named character vector.
 #'
 #' @param n The number of colours required, from one to six.
-#' @param scheme The name of a colour scheme as a character string. Run
-#'   `scheme_names()` for the available options.
+#' @param palette The name of a colour palette as a character string. One of
+#'   govanal_bars, govanal_lines, muted1, muted2, muted3, vibrant1, vibrant2
 #' @export
 #' @examples
-#' moj_palette(5, scheme = "vibrant1")
-moj_palette <- function(n, scheme){
+#' moj_palette(5, palette = "vibrant1")
+moj_palette <- function(n, palette){
 
   # Check n is an integer
   if (n != as.integer(n))
@@ -99,14 +99,14 @@ moj_palette <- function(n, scheme){
     stop("n must be between 1 and 6.", call. = FALSE)
   }
 
-  # Check scheme name is valid
-  if (!scheme %in% names(palettes())){
-    scheme_names_as_string <- paste(scheme_names(), collapse = '", "')
-    message <- glue::glue('"{scheme}" is not a valid colour scheme name. The available colour schemes are: "{scheme_names_as_string}".')
+  # Check palette name is valid
+  if (!palette %in% names(palettes())){
+    palette_names_as_string <- paste(palette_names(), collapse = '", "')
+    message <- glue::glue('"{palette}" is not a valid colour palette name. The available colour palettes are: "{palette_names_as_string}".')
     rlang::abort(message = message)
   }
 
-  palettes()[[scheme]][[n]]
+  palettes()[[palette]][[n]]
 }
 
 #' Colour palette
@@ -116,7 +116,7 @@ moj_palette <- function(n, scheme){
 #' @param ... Arguments passed to `moj_palette()`.
 #' @export
 #' @examples
-#' mojchart_palette(5, scheme = "vibrant1")
+#' mojchart_palette(5, palette = "vibrant1")
 mojchart_palette <- function(...){
 
   warning("mojchart_palette() has been renamed as moj_palette() and will be removed in the future.", call. = FALSE)
